@@ -18,3 +18,12 @@ npm install
 npm run dev
 ~~~
 
+## storybook
+
+アプリの部品は、[Storybook: Frontend workshop for UI development](https://storybook.js.org/)を利用してデザインします。
+
+以下を実行し、プロジェクト内に`storybook`の環境を作成します。
+
+~~~shell
+npx storybook@latest init
+~~~
