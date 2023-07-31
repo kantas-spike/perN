@@ -1,0 +1,604 @@
+{/* Colors.mdx */}
+
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+import  { key_colors, create_tones_of_accent_colors, create_tones_of_neutral_colors } from '../lib/color_system'
+
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../tailwind.config.js'
+
+export const fullConfig = resolveConfig(tailwindConfig)
+
+<Meta title="Color System" />
+
+# Color System
+
+[Material Design](https://m3.material.io/)の[Color system](https://m3.material.io/styles/color/the-color-system/key-colors-tones)を参考に、
+アプリで使用するカラーを選びます。
+
+## Key Colors
+
+まずは、キーとなる色として、
+
+- [Accent colors](https://m3.material.io/styles/color/the-color-system/key-colors-tones#a0d0c095-7068-46b3-bb67-28bc64d69f17)
+- [Neutral colors](https://m3.material.io/styles/color/the-color-system/key-colors-tones#83019d73-d176-46bc-a4b2-48654a364aec)
+- [Additional colors](https://m3.material.io/styles/color/the-color-system/key-colors-tones#ed9cff6c-5844-43b2-b8d8-34896bd68282)
+
+を選びます。
+
+### Accent colors
+
+以下の3色を選びます。
+
+- Primary
+
+  目立たせたいキーとなるコンポーネントの色です。
+
+- Secondary
+
+  あまり目立たないコンポーネントの色です。
+
+- Tertiary
+
+  アクセントとなる色です。Primary色と Secondary色のバランスをとったり、要素に注目を集めるために使用します。
+
+#### 色選び
+
+なんとなく青系にしたいと思います。
+
+そこで、[以前作成したカラーホイールツール](https://kantas-spike.github.io/portfolio/articles/2022/08/04-study-color-wheel/)を使って、
+青の類似色(Analogous)を拾いました。これらを、それぞれ`Primary`と`Secondary`にします。
+
+- <span class="bg-[#3237cd] text-white px-1">Primary: #3237cd</span>
+- <span class="bg-[#3284cd] text-white px-1">Secondary: #3284cd</span>
+
+さらに、`Primary`の補色を拾い、`Tertiary`にします。
+
+- <span class="bg-[#cdc832] text-white px-1">Tertiary: #cdc832</span>
+
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="Accent colors"
+      subtitle=""
+      colors={{
+        "Primary Key Color": key_colors.primary.hex(),
+        "Secondary Key Color": key_colors.secondary.hex(),
+        "Tertiary Key Color": key_colors.tertiary.hex(),
+      }}
+    />
+  </ColorPalette>
+</div>
+
+### Additional colors
+
+Accent colors以外に、アプリに追加したい色です。
+
+今回は、以下のみ追加しています。
+
+- [Error colors](https://m3.material.io/styles/color/the-color-system/key-colors-tones#e14ecb3a-cd4c-41c6-873c-9313128b762a)
+
+  エラーを表現するために使う色です。
+
+### 色選び
+
+適当に赤系の色を選びます。
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="Additional colors"
+      subtitle=""
+      colors={{
+        "Error": key_colors.error.hex(),
+      }}
+    />
+  </ColorPalette>
+</div>
+
+### Neutral colors
+
+以下の2色を選びます。
+
+- Neutral Key Color
+
+  背景色や、テキストやアイコンの強調色に使用する。
+
+- Neutral Variant Key Color
+
+  テキストやアイコンやコンポーネントのアウトラインを中程度に強調するために使用する。
+
+### 色選び
+
+カラーホイールで、彩度の低いホイールの中央寄りの色を2つ選びます。
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="Neutral colors"
+      subtitle=""
+      colors={{
+        "Neutral Key Color": key_colors.neutral.hex(),
+        "Neutral Variant Key Color": key_colors.neutral_variant.hex(),
+      }}
+    />
+  </ColorPalette>
+</div>
+
+## Tone Palette
+
+以上で、アプリ内でキーとなる色が決まりましたが、キーカラーをそのまま利用するわけではりません。
+
+キーカラーの **輝度** を段階的に変化させた色調のパレットを作成します。
+そして、アプリでは、パレットの各色につけた名前(トークン)を利用します。
+
+### Neutral colors
+
+101段階(輝度0〜100)のパレットを用意します。
+
+Neutral colors毎に、個別のプレフィックスを決め、`プレフィックス+輝度`でパレットの色を指定します。
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="Neutral Key Color"
+      subtitle="prefix: 'N-'"
+      colors={{ "Neutral Key Color": `linear-gradient(to right, ${key_colors.neutral.set('hsl.l', 0).hex()}, ${key_colors.neutral.hex()}, ${key_colors.neutral.set('hsl.l', 1).hex()})` }}
+    />
+    <ColorItem
+      title="Neutral Variant Key Color"
+      subtitle="prefix: 'NV-'"
+      colors={{ "Neutral Variant Key Color": `linear-gradient(to right, ${key_colors.neutral_variant.set('hsl.l', 0).hex()}, ${key_colors.neutral_variant.hex()}, ${key_colors.neutral_variant.set('hsl.l', 1).hex()})` }}
+    />
+  </ColorPalette>
+</div>
+
+#### 使用例
+
+<div className="border-2 rounded-md m-4 p-4">
+  <div class="flex gap-4 h-32 justify-stretch">
+    <div class="border flex bg-tones-N_98 text-black font-bold items-center justify-center grow">
+      <div>N-98</div>
+    </div>
+    <div class="border flex bg-tones-N_10 text-white font-bold items-center justify-center grow">
+      <div>N-10</div>
+    </div>
+    <div class="border flex bg-tones-N_94 text-black font-bold items-center justify-center grow">
+      <div>N-94</div>
+    </div>
+    <div class="border flex bg-tones-NV_50 text-white font-bold items-center justify-center grow">
+      <div>N-50</div>
+    </div>
+    <div class="border flex bg-tones-NV_80 text-black font-bold items-center justify-center grow">
+      <div>NV-80</div>
+    </div>
+    <div class="border flex bg-tones-NV_30 text-white font-bold items-center justify-center grow">
+      <div>NV-30</div>
+    </div>
+  </div>
+</div>
+
+### Accent colors
+
+13段階(輝度0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100)のパレットを用意します。
+
+Accent colors毎に、個別のプレフィックスを決め、`プレフィックス+輝度`でパレットの色を指定します。
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="Primary Key Color"
+      subtitle="prefix: 'P-'"
+      colors={{ ...create_tones_of_accent_colors(key_colors.primary, 'P-')}}
+    />
+    <ColorItem
+      title="Secondary Key Color"
+      subtitle="prefix: 'S-'"
+      colors={{ ...create_tones_of_accent_colors(key_colors.secondary, 'S-')}}
+    />
+    <ColorItem
+      title="Tertiary Key Color"
+      subtitle="prefix: 'T-'"
+      colors={{ ...create_tones_of_accent_colors(key_colors.tertiary, 'T-')}}
+    />
+  </ColorPalette>
+</div>
+
+#### 使用例
+
+<div className="border-2 rounded-md m-4 p-4">
+  <div class="flex gap-4 h-32 justify-stretch">
+    <div class="border flex bg-tones-P_40 text-white font-bold items-center justify-center grow">
+      <div>P-40</div>
+    </div>
+    <div class="border flex bg-tones-S_40 text-white font-bold items-center justify-center grow">
+      <div>S-40</div>
+    </div>
+    <div class="border flex bg-tones-T_40 text-white font-bold items-center justify-center grow">
+      <div>T-40</div>
+    </div>
+    <div class="border flex bg-tones-P_90 text-black font-bold items-center justify-center grow">
+      <div>P-90</div>
+    </div>
+    <div class="border flex bg-tones-S_90 text-black font-bold items-center justify-center grow">
+      <div>S-90</div>
+    </div>
+    <div class="border flex bg-tones-T_90 text-black font-bold items-center justify-center grow">
+      <div>T-90</div>
+    </div>
+  </div>
+</div>
+
+### Additional colors
+
+13段階(輝度0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100)のパレットを用意します。
+
+Additional colors毎に、個別のプレフィックスを決め、`プレフィックス+輝度`でパレットの色を指定します。
+
+<ColorPalette>
+  <ColorItem
+    title="Error"
+    subtitle="prefix: 'E-'"
+    colors={{ ...create_tones_of_accent_colors(key_colors.error, 'E-')}}
+  />
+</ColorPalette>
+
+#### 使用例
+
+<div className="border-2 rounded-md m-4 p-4">
+  <div class="flex gap-4 h-32 justify-stretch">
+    <div class="border flex bg-tones-E_40 text-white font-bold items-center justify-center grow">
+      <div>E-40</div>
+    </div>
+    <div class="border flex bg-tones-E_100 text-black font-bold items-center justify-center grow">
+      <div>E-100</div>
+    </div>
+    <div class="border flex bg-tones-E_90 text-black font-bold items-center justify-center grow">
+      <div>E-90</div>
+    </div>
+    <div class="border flex bg-tones-E_10 text-white font-bold items-center justify-center grow">
+      <div>E-10</div>
+    </div>
+  </div>
+</div>
+
+## Role
+
+これまで紹介してきた色相パレット(Tone Palette)の色は、コンポーネントにマッピングされた役割(Role)に割り当てられます。
+
+ここでは、役割(Role)について説明します。
+
+### Accent colors と Additional colors
+
+以下のRoleが定義されます。
+
+- 'Base'
+
+  基本となる色です。(`Base`部分には色名(`Primary`, `Secondary`, `Tertiary`, `Error`)が入ります)
+
+- On 'Base'
+
+  `Base`を背景にもつ、コンテンツ(iconやテキスト)の色になります。(`Base`部分には色名(`Primary`, `Secondary`, `Tertiary`, `Error`)が入ります)
+
+- 'Base' container
+
+  `Base`よりも強調したくない要素の色になります。(`Base`部分には色名(`Primary`, `Secondary`, `Tertiary`, `Error`)が入ります)
+
+- On 'Base' container
+
+  `Base container`を背景にもつ、コンテンツ(iconやテキスト)の色になります。(`Base`部分には色名(`Primary`, `Secondary`, `Tertiary`, `Error`)が入ります)
+
+<div className="border-2 rounded-md m-4 p-4">
+<ColorPalette>
+  <ColorItem
+    title="Base"
+    subtitle=""
+    colors={{
+      "Primary(P-40)": fullConfig.theme.colors.primary.DEFAULT,
+      "Secondary(S-40)": fullConfig.theme.colors.secondary.DEFAULT,
+      "Tertiary(T-40)": fullConfig.theme.colors.tertiary.DEFAULT,
+      "Error(E-40)": fullConfig.theme.colors.error.DEFAULT,
+    }}
+  />
+  <ColorItem
+    title="On Base"
+    subtitle=""
+    colors={{
+      "On Primary(P-100)": fullConfig.theme.colors.on.primary.DEFAULT,
+      "On Secondary(S-100)": fullConfig.theme.colors.on.secondary.DEFAULT,
+      "On Tertiary(T-100)": fullConfig.theme.colors.on.tertiary.DEFAULT,
+      "On Error(E-100)": fullConfig.theme.colors.on.error.DEFAULT,
+    }}
+  />
+  <ColorItem
+    title="Base Container"
+    subtitle=""
+    colors={{
+      "Primary Container(P-90)": fullConfig.theme.colors.primary.container,
+      "Secondary Container(S-90)": fullConfig.theme.colors.secondary.container,
+      "Tertiary Container(T-90)": fullConfig.theme.colors.tertiary.container,
+      "Error Container(E-90)": fullConfig.theme.colors.error.container,
+    }}
+  />
+  <ColorItem
+    title="On Base Container"
+    subtitle=""
+    colors={{
+      "On Primary Container(P-10)": fullConfig.theme.colors.on.primary.container,
+      "On Secondary Container(S-10)": fullConfig.theme.colors.on.secondary.container,
+      "On Tertiary Container(T-10)": fullConfig.theme.colors.on.tertiary.container,
+      "On Error Container(E-10)": fullConfig.theme.colors.on.error.container,
+    }}
+  />
+  </ColorPalette>
+</div>
+
+#### 使用例
+
+以下は、`Base系`と`On Base系`の色を、背景色とテキスト色として組み合わせて使用した場合の例になります。
+
+{/* class="bg-primary bg-on-primary text-primary text-on-primary" */}
+{/* class="bg-primary-container bg-on-primary-container text-primary-container text-on-primary-container" */}
+{/* class="bg-secondary bg-on-secondary text-secondary text-on-secondary" */}
+{/* class="bg-secondary-container bg-on-secondary-container text-secondary-container text-on-secondary-container" */}
+{/* class="bg-tertiary bg-on-tertiary text-tertiary text-on-tertiary" */}
+{/* class="bg-tertiary-container bg-on-tertiary-container text-tertiary-container text-on-tertiary-container" */}
+{/* class="bg-error bg-on-error text-error text-on-error" */}
+{/* class="bg-error-container bg-on-error-container text-error-container text-on-error-container" */}
+
+<div className="border-2 rounded-md m-4 p-4">
+  <div class="flex gap-2 justify-stretch">
+    { [
+    {name: 'Primary', color: 'primary', prefix: 'P-'},
+    {name: 'Secondary', color: 'secondary', prefix: 'S-'},
+    {name: 'Tertiary', color: 'tertiary', prefix: 'T-'},
+    {name: 'Error', color: 'error', prefix: 'E-'},
+  ].map((v, idx) => (
+    <div className="flex flex-col m-1 border border-outline rounded-md grow" key={idx}>
+      <div className={`flex flex-col m-1 p-2 bg-${v.color} text-on-${v.color} font-bold`}>
+        <div className="text-left h-24">{v.name}</div>
+        <div className="text-right">{v.prefix}40</div>
+      </div>
+      <div className={`flex flex-col m-1 p-2 bg-on-${v.color} text-${v.color} font-bold`}>
+        <div className="text-left h-6">On {v.name}</div>
+        <div className="text-right">{v.prefix}100</div>
+      </div>
+      <div className={`flex flex-col m-1 p-2 bg-${v.color}-container text-on-${v.color}-container font-bold`}>
+        <div className="text-left h-24">{v.name} Container</div>
+        <div className="text-right">{v.prefix}90</div>
+      </div>
+      <div className={`flex flex-col m-1 p-2 bg-on-${v.color}-container text-${v.color}-container font-bold`}>
+        <div className="text-left h-6">On {v.name} Container</div>
+        <div className="text-right">{v.prefix}10</div>
+      </div>
+    </div>
+  )
+  )
+}
+  </div>
+</div>
+
+### Surface colors
+
+以下のRoleが定義されます。
+
+#### Surface
+
+  領域を定義するための色です。背景や他の要素と区別します。
+
+  さらに3つの色調に分類されます。
+
+    - Surface dim: 薄暗い色
+    - Surface: 通常色
+    - Surface bright: 明い色
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="Surface"
+      subtitle=""
+      colors={{
+        "Surface Dim(N-87)": fullConfig.theme.colors.surface.dim,
+        "Surface(N-98)": fullConfig.theme.colors.surface.DEFAULT,
+        "Surface Bright(N-98)": fullConfig.theme.colors.surface.bright,
+      }}
+    />
+  </ColorPalette>
+</div>
+
+#### Surface Container
+
+  `Surface`に含まれる領域のデフォルト色になります。
+  つまり、`Surface`の上に配置されるのが`Surface Container`になります。
+  `Surface`に対して良好なコントラストを提供します。
+
+  `Surface`に対してのコントラストの強度により、さらに5つに分類されます。
+
+    - Surface Container Lowest
+    - Surface Container Low
+    - Surface Container
+    - Surface Container High
+    - Surface Container Highest
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="Surface Container"
+      subtitle=""
+      colors={{
+        "Surface Container Lowest(N-100)": fullConfig.theme.colors.surface.container.lowest,
+        "Surface Container Low(N-96)": fullConfig.theme.colors.surface.container.low,
+        "Surface Container(N-94)": fullConfig.theme.colors.surface.container.DEFAULT,
+        "Surface Container High(N-92)": fullConfig.theme.colors.surface.container.high,
+        "Surface Container Highest(N-90)": fullConfig.theme.colors.surface.container.highest,
+      }}
+    />
+  </ColorPalette>
+</div>
+
+#### On Surface colors
+
+  `Surface`色は、背景やコンテナーなど、大きな表示領域に使用する色になります。
+  `On Surface`色は、`Surface`の`上`に配置するテキストやアイコン、線に使用する色になります。
+
+  コントラストの強度により2つに分類されます
+
+  - On Surface: 通常色
+  - On Surface Variant: コントラストの強度を低くした色
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="On Surface"
+      subtitle=""
+      colors={{
+        "On Surface(N-10)": fullConfig.theme.colors.on.surface.DEFAULT,
+        "On Surface Variant(NV-30)": fullConfig.theme.colors.on.surface.variant,
+      }}
+    />
+  </ColorPalette>
+</div>
+
+
+#### 使用例
+
+<div className="border-2 rounded-md m-4 p-4">
+  <div class="flex gap-2 justify-stretch">
+    <div class="border border-outline flex bg-surface-dim text-on-surface font-bold items-center flex-col gap-2 justify-center grow p-2 text-center">
+      <div class="text-on-surface">Surface Dim</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container-lowest text-on-surface-variant">Surface Container Lowest</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container-low text-on-surface-variant">Surface Container Low</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container text-on-surface-variant">Surface Container</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container-high text-on-surface-variant">Surface Container High</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container-highest text-on-surface-variant">Surface Container Highest</div>
+    </div>
+    <div class="border border-outline flex bg-surface text-on-surface font-bold items-center flex-col gap-2 justify-center grow p-2 text-center">
+      <div class="text-on-surface">Surface</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container-lowest text-on-surface-variant">Surface Container Lowest</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container-low text-on-surface-variant">Surface Container Low</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container text-on-surface-variant">Surface Container</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container-high text-on-surface-variant">Surface Container High</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container-highest text-on-surface-variant">Surface Container Highest</div>
+    </div>
+    <div class="border border-outline flex bg-surface-bright text-on-surface font-bold items-center flex-col gap-2 justify-center grow p-2 text-center">
+      <div class="text-on-surface">Surface Bright</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container-lowest text-on-surface-variant">Surface Container Lowest</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container-low text-on-surface-variant">Surface Container Low</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container text-on-surface-variant">Surface Container</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container-high text-on-surface-variant">Surface Container High</div>
+      <div class="w-72 border border-outline py-10 bg-surface-container-highest text-on-surface-variant">Surface Container Highest</div>
+    </div>
+  </div>
+</div>
+
+
+#### Outline
+
+  要素の境界を表したり、要素を強調したりするために使用する色です。
+
+  コントラストの強度により2つに分類されます
+
+  - Outline: 通常色
+  - Outline Variant: コントラストの強度を低くした色
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="Outline"
+      subtitle=""
+      colors={{
+        "Outline(NV-50)": fullConfig.theme.colors.outline.DEFAULT,
+        "Outline Variant(NV-80)": fullConfig.theme.colors.outline.variant,
+      }}
+    />
+  </ColorPalette>
+</div>
+
+#### 使用例
+
+<div className="border-2 rounded-md m-4 p-4 bg-surface">
+  <div class="flex gap-2 justify-stretch">
+    <div class="text-on-surface bg-surface-container p-4 rounded-md border-2 border-outline grow text-center">Outlineで囲ったテキスト</div>
+    <div class="text-on-surface-variant bg-surface-container-low p-4 rounded-md border-2 border-outline-variant grow text-center">Outline Variantで囲ったテキスト</div>
+  </div>
+</div>
+
+### Additional Role
+
+#### Inverse colors
+
+周りのUIと逆の色を使うことで、その要素を強調します。
+
+以下のRoleが定義されます。
+
+- Inverse Surface: `Sufrface`の逆の色
+- Inverse On Surface: `Inverse Surface`に配置するテキストやアイコンの色
+- Inverse Primary: `Inverse Surface`に配置するボタンなどの色
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="Inverse"
+      subtitle=""
+      colors={{
+        "Inverse primary(P-80)": fullConfig.theme.colors.inverse.primary,
+        "Inverse Surface(N-20)": fullConfig.theme.colors.inverse.surface,
+        "Inverse On Surface(N-95)": fullConfig.theme.colors.on.inverse.surface,
+      }}
+    />
+  </ColorPalette>
+</div>
+
+#### 使用例
+
+<div className="border-2 rounded-md m-4 p-4 bg-inverse-surface">
+  <div class="flex gap-2 flex-col justify-stretch">
+    <div class="text-on-inverse-surface">Inverse Surface</div>
+    <div class="text-inverse-primary border-inverse-primary p-4 rounded-md border-2 grow font-bold text-2xl text-center">Inverse Primaryのボタン</div>
+  </div>
+</div>
+
+#### その他
+
+以下は、[Color system – Material Design 3](https://m3.material.io/styles/color/the-color-system/tokens)に説明はないですが、
+システムトークンには登場するロールです。
+
+- Background: 背景色 (多分、`Surface`の別名)
+- On Background: 背景色に配置するテキストやアイコンの色 (多分、`On Surface`の別名)
+- Shadow: 影の色
+- Surface tint: [Material Design 3](https://m3.material.io/styles/elevation/applying-elevation)において要素の高度応じて重ねあわせて表示する基本色
+- Scrim: モーダル画面の画面の外側の色
+
+<div className="border-2 rounded-md m-4 p-4">
+<ColorPalette>
+  <ColorItem
+    title="Background"
+    subtitle=""
+    colors={{
+      "Background(N-98)": fullConfig.theme.colors.background.DEFAULT,
+      "On Background(N-10)": fullConfig.theme.colors.on.background.DEFAULT,
+    }}
+  />
+<ColorItem
+    title="Shadow"
+    subtitle=""
+    colors={{
+      "Shadow(N-0)": fullConfig.theme.colors.shadow.DEFAULT,
+    }}
+  />
+<ColorItem
+    title="Surface tint"
+    subtitle=""
+    colors={{
+      "Surface tint(P-40)": fullConfig.theme.colors.primary.DEFAULT,
+    }}
+  />
+<ColorItem
+    title="Scrim"
+    subtitle=""
+    colors={{
+      "Scripm(N-0)": fullConfig.theme.colors.scrim.DEFAULT,
+    }}
+  />
+</ColorPalette>
+</div>
