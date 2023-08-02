@@ -1,7 +1,5 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { noto_sans_jp } from '@/lib/typography'
 
 export const metadata = {
   title: 'Create Next App',
@@ -10,8 +8,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html className={`${noto_sans_jp.variable}`}>
+      <body className='font-sans'>{children}</body>
     </html>
   )
 }
