@@ -108,6 +108,12 @@ module.exports = {
       letterSpacing: {
         's': '0.02rem',
         'm': '0.04rem'
+      },
+      spacing: {
+        's': '16px',
+        'm': '24px',
+        'l': '40px',
+        'xl': '64px',
       }
     },
   },
