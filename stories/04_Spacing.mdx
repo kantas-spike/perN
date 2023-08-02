@@ -1,0 +1,116 @@
+import { Meta, Typeset, Unstyled } from '@storybook/blocks'
+import {noto_sans_jp} from '../lib/typography'
+
+<Meta title="スタイル/04. 余白" />
+<div className={`${noto_sans_jp.variable}`}><Unstyled><div className="font-sans text-on-surface">
+
+# 余白
+
+[デザインシステム｜デジタル庁](https://www.digital.go.jp/policies/servicedesign/designsystem/) を参考に、
+アプリで使用するレイアウトカラムを選びます。
+
+なるべく[Tailwind CSS](https://tailwindcss.com/)標準のユーティリティクラスを利用します。
+
+## バリエーション
+
+8pxをスペーシングの基本とします。大きなサイズのスペーシングはフィボナッチ数列を用いて定義し、
+小さなサイズのスペーシングは2で割り定義します。
+
+<div className="grid gap-2 grid-cols-12 bg-surface text-on-surface my-8 items-center bg-surface p-4 rounded-md border border-outline-variant">
+    <div className="col-span-3 px-2 text-on-surface">大きさ</div>
+    <div className="col-span-2 px-2 text-on-surface">トークン</div>
+    <div className="col-span-2 px-2 text-on-surface">値</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface"><div className="w-1 h-1 bg-surface-container-highest"></div></div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">xxs</div>
+    <div className="col-span-7 py-2 px-2 text-on-surface">4px (spaceing unit * 1/2)</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface"><div className="w-2 h-2 bg-surface-container-highest"></div></div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">xs</div>
+    <div className="col-span-7 py-2 px-2 text-on-surface">8px (spaceing unit * 1)</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface"><div className="w-4 h-4 bg-surface-container-highest"></div></div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">s</div>
+    <div className="col-span-7 py-2 px-2 text-on-surface">16px (spaceing unit * 2)</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface"><div className="w-6 h-6 bg-surface-container-highest"></div></div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">m</div>
+    <div className="col-span-7 py-2 px-2 text-on-surface">24px (spaceing unit * 3)</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface"><div className="w-10 h-10 bg-surface-container-highest"></div></div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">l</div>
+    <div className="col-span-7 py-2 px-2 text-on-surface">40px (spaceing unit * 5)</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface"><div className="w-16 h-16 bg-surface-container-highest"></div></div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">xl</div>
+    <div className="col-span-7 py-2 px-2 text-on-surface">64px (spaceing unit * 8)</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface"><div className="w-[104px] h-[104px] bg-surface-container-highest"></div></div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">2xl</div>
+    <div className="col-span-7 py-2 px-2 text-on-surface">104px (spaceing unit * 13)</div>
+    <hr className="col-span-full border border-outline" />
+</div>
+
+## 見出しにおけるスペーシングルール
+
+見出しの上、見出しと本文とのに使うスペーシングは、右の表を基本とします。
+モバイル、タブレット、デスクトップ共通でこのルールを使います。
+
+<div className="grid gap-2 grid-cols-12 bg-surface text-on-surface my-8 items-center bg-surface p-4 rounded-md border border-outline-variant">
+    <div className="col-span-2 px-2 text-on-surface">見出し</div>
+    <div className="col-span-2 px-2 text-on-surface">Hの上</div>
+    <div className="col-span-2 px-2 text-on-surface">HとBodyの間</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-2 py-2 px-2 text-on-surface">H1</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">xl (64px)</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">m (24px)</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-2 py-2 px-2 text-on-surface">H2</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">xl (64px)</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">m (24px)</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-2 py-2 px-2 text-on-surface">H3</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">l (40px)</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">m (24px)</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-2 py-2 px-2 text-on-surface">H4</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">l (40px)</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">s (16px)</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-2 py-2 px-2 text-on-surface">H5</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">l (40px)</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">s (16px)</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-2 py-2 px-2 text-on-surface">H5</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">m (24px)</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">s (16px)</div>
+    <hr className="col-span-full border border-outline" />
+</div>
+
+## 仕様
+
+### デザイントークン
+
+以下のトークンを[Tailwind CSS](https://tailwindcss.com/)のユーティリティクラスとして追加する。
+
+<div className="grid gap-4 grid-cols-12 bg-surface text-on-surface my-8 items-center bg-surface p-4 rounded-md border border-outline-variant">
+    <div className="col-span-4 px-2 text-on-surface">分類</div>
+    <div className="col-span-4 px-2 text-on-surface">トークン</div>
+    <div className="col-span-4 px-2 text-on-surface">サイズ</div>
+    <hr className="col-span-12 border border-outline" />
+    <div className="col-span-4 py-2 px-2 text-on-surface">spacing</div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">s</div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">16px</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface">m</div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">24px</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface">l</div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">40px</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface">xl</div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">64px</div>
+    <hr className="col-span-full border border-outline" />
+</div>
+
+</div></Unstyled></div>
