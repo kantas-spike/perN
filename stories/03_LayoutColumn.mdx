@@ -1,0 +1,174 @@
+import { Meta, Typeset, Unstyled } from '@storybook/blocks'
+import {noto_sans_jp} from '../lib/typography'
+
+<Meta title="スタイル/03. レイアウトカラム" />
+<div className={`${noto_sans_jp.variable}`}>
+<Unstyled>
+<div className="font-sans text-on-surface">
+# レイアウトカラム
+
+[デザインシステム｜デジタル庁](https://www.digital.go.jp/policies/servicedesign/designsystem/) を参考に、
+アプリで使用するレイアウトカラムを選びます。
+
+なるべく[Tailwind CSS](https://tailwindcss.com/)標準のユーティリティクラスを利用します。
+
+## レイアウトパターン
+
+ページのレイアウトは12グリッドを基本とした4分割を使います。
+
+<div className="grid gap-2 grid-cols-12 bg-surface text-on-surface my-8">
+    <div className="col-span-3 px-2 text-on-surface">名前</div>
+    <div className="col-span-2 px-2 text-on-surface">トークン</div>
+    <div className="col-span-2 px-2 text-on-surface">値</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface">12グリッド</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">grid-cols-2</div>
+    <div className="col-span-7 py-2 px-2 text-on-surface">grid-template-columns: repeat(12, minmax(0, 1fr));</div>
+    <hr className="col-span-full border border-outline" />
+</div>
+
+### スマートフォン
+
+`トップ/詳細/フォーム`は、全て1カラムで構成されます。
+
+<div className="grid gap-2 grid-cols-12 bg-surface text-on-surface my-8">
+    <div className="col-span-3 px-2 text-on-surface">名前</div>
+    <div className="col-span-2 px-2 text-on-surface">トークン</div>
+    <div className="col-span-2 px-2 text-on-surface">値</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface">グリッドの横マージン</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">mx-4</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">16px</div>
+    <hr className="col-span-full border border-outline" />
+</div>
+
+<div className="container mx-auto border-2 border-outline rounded-md max-w-screen-sm bg-surface text-on-surface">
+    <div className="mx-4 my-4 grid grid-cols-12">
+        <div className="col-span-2">トップ/詳細/フォーム</div>
+        <div className="bg-surface-container-high p-4 col-span-full text-center txt-button">1分の1</div>
+    </div>
+</div>
+
+### タブレット
+
+`トップ/詳細`は、1カラム(or 2カラム)、 `フォーム`は1カラムで構成されます。
+
+<div className="grid gap-2 grid-cols-12 bg-surface text-on-surface my-8">
+    <div className="col-span-3 px-2 text-on-surface">名前</div>
+    <div className="col-span-2 px-2 text-on-surface">トークン</div>
+    <div className="col-span-2 px-2 text-on-surface">値</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface">グリッドの横マージン</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">mx-10</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">40px</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface">グリッドのガター</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">gap-6</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">24px</div>
+    <hr className="col-span-full border border-outline" />
+</div>
+
+<div className="container mx-auto border-2 border-outline rounded-md max-w-screen-md bg-surface text-on-surface">
+    <div className="mx-10 my-4 grid grid-cols-12 gap-6">
+        <div className="col-span-2">トップ/詳細</div>
+        <div className="bg-surface-container-high p-4 col-span-full text-center txt-button">1分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-6 text-center txt-button">2分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-6 text-center txt-button">2分の1</div>
+        <div className="col-span-2">フォーム</div>
+        <div className="bg-surface-container-high p-4 col-span-full text-center txt-button">1分の1</div>
+    </div>
+</div>
+
+### デスクトップ
+
+`トップ/詳細/フォーム`は、それぞれ、1:2:1、3:1、3:1(右カラムなし)で構成されます。
+
+<div className="grid gap-2 grid-cols-12 bg-surface text-on-surface my-8">
+    <div className="col-span-3 px-2 text-on-surface">名前</div>
+    <div className="col-span-2 px-2 text-on-surface">トークン</div>
+    <div className="col-span-2 px-2 text-on-surface">値</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface">グリッドの横マージン</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">mx-12</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">40px以上</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface">グリッドのガター</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">gap-8</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">32px</div>
+    <hr className="col-span-full border border-outline" />
+</div>
+
+<div className="container mx-auto border-2 border-outline rounded-md max-w-screen-lg text-on-surface bg-surface">
+    <div className="mx-12 my-4 grid grid-cols-12 gap-8">
+        <div className="col-span-full">トップ</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-6 text-center txt-button">4分の2</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+
+        <div className="col-span-full">詳細</div>
+        <div className="bg-surface-container-high p-4 col-span-9 text-center txt-button">4分の3</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+
+
+        <div className="col-span-full">フォーム</div>
+        <div className="bg-surface-container-high p-4 col-span-9 text-center txt-button">4分の3</div>
+
+
+        <div className="col-span-full">その他</div>
+        <div className="bg-surface-container-high p-4 col-span-4 text-center txt-button">3分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-4 text-center txt-button">3分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-4 text-center txt-button">3分の1</div>
+    </div>
+</div>
+
+## ブレイクポイント
+
+[Tailwind CSS](https://tailwindcss.com/)標準のブレイクポイントに従う。
+
+<div className="grid gap-2 grid-cols-12 bg-surface text-on-surface my-8">
+    <div className="col-span-3 px-2 text-on-surface">名前</div>
+    <div className="col-span-2 px-2 text-on-surface">トークン</div>
+    <div className="col-span-2 px-2 text-on-surface">値</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface">モバイル</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">sm</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">640px</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface">タブレット</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">md</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">768px</div>
+    <hr className="col-span-full border border-outline" />
+    <div className="col-span-3 py-2 px-2 text-on-surface">デスクトップ</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">lg</div>
+    <div className="col-span-2 py-2 px-2 text-on-surface">1024px</div>
+    <hr className="col-span-full border border-outline" />
+</div>
+
+## 段落の読みやすさの配慮
+
+より閲覧しやすいサイトにするために、一行あたりの最大文字数を40文字にすることをお勧めします。
+
+~~~css
+p {
+    @apply txt-body-l max-w-[40rem];
+  }
+~~~
+
+## 仕様
+
+### デザイントークン
+
+独自に定義するトークンはありません。
+[Tailwind CSS](https://tailwindcss.com/)標準のユーティリティクラスを利用します。
+
+</div></Unstyled></div>
