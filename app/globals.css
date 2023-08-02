@@ -25,3 +25,68 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer utilities {
+  /* 見出し(デスクトップ版) */
+  .hl-l {
+    @apply text-4xl font-normal leading-s tracking-m;
+  }
+  .hl-m {
+    @apply text-3xl font-normal leading-m tracking-m;
+  }
+  .hl-s {
+    @apply text-2xl font-normal leading-m tracking-m;
+  }
+  .hl-xs {
+    @apply text-xl font-normal leading-m tracking-m;
+  }
+  .hl-xss {
+    @apply text-lg font-normal leading-m tracking-m;
+  }
+
+  /* 見出し(モバイル版) */
+  .hl-l-mob {
+    @apply text-3xl font-medium leading-m tracking-m;
+  }
+  .hl-m-mob {
+    @apply text-2xl font-medium leading-m tracking-m;
+  }
+  .hl-s-mob {
+    @apply text-xl font-medium leading-m tracking-m;
+  }
+  .hl-xs-mob {
+    @apply text-lg font-medium leading-m tracking-m;
+  }
+  .hl-xss-mob {
+    @apply text-base font-medium leading-l tracking-m;
+  }
+
+  /* その他テキスト */
+  .txt-body-l {
+    @apply text-base font-normal leading-l tracking-m;
+  }
+
+  .txt-body-m {
+    @apply text-sm font-normal leading-l tracking-m;
+  }
+
+  .txt-label-l {
+    @apply text-sm font-medium leading-m tracking-m;
+  }
+
+  .txt-label-m {
+    @apply text-xs font-medium leading-m tracking-m;
+  }
+
+  .txt-comment-l {
+    @apply text-xs font-normal leading-l tracking-s;
+  }
+
+  .txt-comment-m {
+    @apply text-[10px] font-normal leading-l tracking-s;
+  }
+
+  .txt-button {
+    @apply text-base font-bold leading-m tracking-m;
+  }
+}

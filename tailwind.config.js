@@ -1,4 +1,5 @@
 const { tones } = require('./lib/color_system')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -95,6 +96,18 @@ module.exports = {
             DEFAULT: tones.N_10,
           }
         }
+      },
+      fontFamily: {
+        sans: ['var(--font-noto_sans_jp)', ...defaultTheme.fontFamily.sans],
+      },
+      lineHeight: {
+        's': '1.4',
+        'm': '1.5',
+        'l': '1.7',
+      },
+      letterSpacing: {
+        's': '0.02rem',
+        'm': '0.04rem'
       }
     },
   },
