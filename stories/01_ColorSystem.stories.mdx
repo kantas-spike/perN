@@ -1,15 +1,17 @@
 {/* Colors.mdx */}
 
 import { Fragment } from 'react'
-import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+import { Meta, ColorPalette, ColorItem, Unstyled } from '@storybook/blocks';
 import  { key_colors, create_tones_of_accent_colors, create_tones_of_neutral_colors } from '../lib/color_system'
+import {noto_sans_jp} from '../lib/typography'
 
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../tailwind.config.js'
 
 export const fullConfig = resolveConfig(tailwindConfig)
 
-<Meta title="スタイル/カラー" />
+<Meta title="スタイル/01. カラー" />
+<div className={`${noto_sans_jp.variable}`}><Unstyled><div className="font-sans text-on-surface">
 
 # Color System
 
@@ -55,7 +57,6 @@ export const fullConfig = resolveConfig(tailwindConfig)
 さらに、`Primary`の補色を拾い、`Tertiary`にします。
 
 - <span className="bg-[#cdc832] text-white px-1">Tertiary: #cdc832</span>
-
 
 <div className="border-2 rounded-md m-4 p-4">
   <ColorPalette>
@@ -350,10 +351,10 @@ Additional colors毎に、個別のプレフィックスを決め、`プレフ�
 <div className="border-2 rounded-md m-4 p-4">
   <div className="flex gap-2 justify-stretch">
     { [
-    {name: 'Primary', color: 'primary', prefix: 'P-'},
-    {name: 'Secondary', color: 'secondary', prefix: 'S-'},
-    {name: 'Tertiary', color: 'tertiary', prefix: 'T-'},
-    {name: 'Error', color: 'error', prefix: 'E-'},
+    {name: 'Primary', color: 'primary', prefix: 'P-', },
+    {name: 'Secondary', color: 'secondary', prefix: 'S-', },
+    {name: 'Tertiary', color: 'tertiary', prefix: 'T-', },
+    {name: 'Error', color: 'error', prefix: 'E-', },
   ].map((v, idx) => (
     <div className="flex flex-col m-1 border border-outline rounded-md grow" key={idx}>
       <div className={`flex flex-col m-1 p-2 bg-${v.color} text-on-${v.color} font-bold`}>
@@ -887,4 +888,4 @@ Additional colors毎に、個別のプレフィックスを決め、`プレフ�
     </div>
 </div>
 
-
+</div></Unstyled></div>

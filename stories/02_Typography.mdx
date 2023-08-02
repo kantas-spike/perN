@@ -1,8 +1,9 @@
 import { Meta, Typeset, Unstyled } from '@storybook/blocks'
 import {noto_sans_jp} from '../lib/typography'
 
-<Meta title="スタイル/タイポグラフィ" />
-<div className={noto_sans_jp.variable}>
+<Meta title="スタイル/02. タイポグラフィ" />
+<div className={`${noto_sans_jp.variable}`}><Unstyled><div className="font-sans text-on-surface">
+
 # タイポグラフィ
 
 [デザインシステム｜デジタル庁](https://www.digital.go.jp/policies/servicedesign/designsystem/) を参考に、
@@ -14,13 +15,11 @@ import {noto_sans_jp} from '../lib/typography'
 
 以下を使用する。
 
-<Unstyled>
 <ul className="text-on-surface font-sans text-xl list-disc list-inside">
     <li className="font-normal"><span>{noto_sans_jp.style.fontFamily} Regular</span></li>
     <li className="font-medium"><span>{noto_sans_jp.style.fontFamily} Medium</span></li>
     <li className="font-bold"><span>{noto_sans_jp.style.fontFamily} Bold</span></li>
 </ul>
-</Unstyled>
 
 ## 見出し
 
@@ -28,7 +27,6 @@ import {noto_sans_jp} from '../lib/typography'
 
 「見出しレベル」を基準に、ニーズに合せて、最適な組合せを選ぶことができます。
 
-<Unstyled>
 <div className="text-on-surface bg-surface rounded-md p-4 my-4 font-sans">
     <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
         <div className="text-on-surface col-span-5">見出しサイズ</div>
@@ -278,9 +276,7 @@ import {noto_sans_jp} from '../lib/typography'
     ))
 }
 </div>
-</Unstyled>
 
-<Unstyled>
 <div className="text-on-surface bg-surface rounded-md p-4 my-4 font-sans">
     <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
         <div className="text-on-surface col-span-2">推奨見出しレベル</div>
@@ -313,13 +309,11 @@ import {noto_sans_jp} from '../lib/typography'
         <div className="text-on-surface col-span-5 text-base font-medium leading-l trackgin-m">見出しXXSモバイル</div>
     </div>
 </div>
-</Unstyled>
 
 ## その他のテキストスタイル
 
 デフォルトのサイズを基準に、必要であればサイズを下げて使用できます。
 
-<Unstyled>
 <div className="text-on-surface bg-surface rounded-md p-4 my-4 font-sans">
     <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
         <div className="col-span-1">名前</div>
@@ -386,7 +380,6 @@ import {noto_sans_jp} from '../lib/typography'
         <div className="col-span-3 text-base font-bold leading-m trackgin-m">ボタンの中のテキストに使用します。</div>
     </div>
 </div>
-</Unstyled>
 
 ## 注釈
 
@@ -394,7 +387,6 @@ import {noto_sans_jp} from '../lib/typography'
 
 注釈説明は文末に表示し、複数ある場合は、※1、※2...といった様に数字を増やし箇条書きで説明します。
 
-<Unstyled>
 <div className="text-on-surface bg-surface border border-outline rounded-md p-4 my-4 font-sans">
 
 <p className="text-base font-normal leading-l trackgin-m mb-8">本文中の一定箇所に注釈を使用する場合は、このように<sup>※1</sup>になります</p>
@@ -405,14 +397,12 @@ import {noto_sans_jp} from '../lib/typography'
 <li>※3 注釈リスト3</li>
 </ul>
 </div>
-</Unstyled>
 
 
 ## 箇条書き
 
 箇条書きを使用する場合は、行頭にインデント(字下げ)を設け、2行目以降もテキストが回り込まない様に同じ位置から文章を始めます。
 
-<Unstyled>
 <div className="text-on-surface bg-surface border border-outline rounded-md p-4 my-4 font-sans">
     <div className="w-48">
     <ul className="list-disc pl-4">
@@ -422,7 +412,6 @@ import {noto_sans_jp} from '../lib/typography'
     </ul>
     </div>
 </div>
-</Unstyled>
 
 ~~~html
 <div className="w-48">
@@ -438,7 +427,6 @@ import {noto_sans_jp} from '../lib/typography'
 
  箇条書きが続く画面の場合は、「・」ではなくカナを使用する事で、各項目の視認性を上げる事ができます。
 
- <Unstyled>
 <div className="text-on-surface bg-surface border border-outline rounded-md p-4 my-4 font-sans">
     <div className="flex gap-4">
         <div className="w-1/2 p-6 m-6 border border-outline-variant rounded-md bg-surface-container">
@@ -477,7 +465,6 @@ import {noto_sans_jp} from '../lib/typography'
         </div>
     </div>
 </div>
-</Unstyled>
 
 リストの下に入れ子のリストが続く場合は、「・」やカナではなく、
 行頭インデントは番号やアルファベットを使用します。
@@ -485,7 +472,6 @@ import {noto_sans_jp} from '../lib/typography'
 行頭インデントが番号やアルファベットになる場合は、
 親となる行頭インデントと入れ子になるリストの行頭インデントは異なるものを使用しましょう。
 
-<Unstyled>
 <div className="text-on-surface bg-surface border border-outline rounded-md p-4 my-4 font-sans">
     <div className="flex gap-4">
         <div className="w-1/2 p-6 m-6 border border-outline-variant rounded-md bg-surface-container">
@@ -523,7 +509,6 @@ import {noto_sans_jp} from '../lib/typography'
         </div>
     </div>
 </div>
-</Unstyled>
 
 ## 太字(ボールド)
 
@@ -544,8 +529,6 @@ import {noto_sans_jp} from '../lib/typography'
 打ち消し線は濫用せず、消去可能な文章は消去対応しますが、
 文章は消去せずに記述を消したい場合のみ(例: 採用情報等で既に期日が過ぎてしまった日時など)用いる事を推奨します。
 
-
-<Unstyled>
 <div className="text-on-surface bg-surface border border-outline rounded-md p-4 my-4 font-sans">
 <div className="mb-6 text-xl trackgin-m line-through">2021年8月25日</div>
 <p>
@@ -553,7 +536,6 @@ import {noto_sans_jp} from '../lib/typography'
 既に終了しているイベントの日付等に使用してください。
 </p>
 </div>
-</Unstyled>
 
 ## 仕様
 
@@ -561,7 +543,6 @@ import {noto_sans_jp} from '../lib/typography'
 
 以下のトークンを[Tailwind CSS](https://tailwindcss.com/)のユーティリティクラスとして追加する。
 
-<Unstyled>
 <div className="text-on-surface bg-surface rounded-md p-4 my-4 font-sans">
     <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
         <div className="col-span-2">分類</div>
@@ -593,29 +574,13 @@ import {noto_sans_jp} from '../lib/typography'
         <div className="col-span-2 px-2">0.04</div>
         <div className="col-span-6 px-2">デフォルトのletter-spacing</div>
         <div className="col-span-12 border-b-2 border-outline-variant"></div>
-
-        <div className="col-span-2 row-span-6 text-center">ウェイト<br/><p>([Tailwind CSS](https://tailwindcss.com/)の標準クラスをそのまま使用)</p></div>
-        <div className="col-span-2 px-2">font-normal</div>
-        <div className="col-span-2 px-2">Regular</div>
-        <div className="col-span-6 px-2">デフォルトのウェイト</div>
-        <div className="col-start-3 col-span-10 border-b-2 border-outline-variant"></div>
-        <div className="col-span-2 px-2">font-medium</div>
-        <div className="col-span-2 px-2">Medium</div>
-        <div className="col-span-6 px-2">ラベルやモバイルの見出しに使用します。</div>
-        <div className="col-start-3 col-span-10 border-b-2 border-outline-variant"></div>
-        <div className="col-span-2 px-2">font-bold</div>
-        <div className="col-span-2 px-2">Bold</div>
-        <div className="col-span-6 px-2">強調表現に使用します。</div>
-        <div className="col-span-12 border-b-2 border-outline-variant"></div>
     </div>
 </div>
-</Unstyled>
 
 ### 見出しサイズと見出しレベル
 
 以下のトークンを[Tailwind CSS](https://tailwindcss.com/)のユーティリティクラスとして追加する。
 
-<Unstyled>
 <div className="text-on-surface bg-surface rounded-md p-4 my-4 font-sans">
     <div className="grid grid-cols-12 gap-4 items-center mb-4">
         <div className="col-span-2">分類</div>
@@ -730,6 +695,5 @@ import {noto_sans_jp} from '../lib/typography'
         </div>
     </div>
 </div>
-</Unstyled>
 
-</div>
+</div></Unstyled></div>
