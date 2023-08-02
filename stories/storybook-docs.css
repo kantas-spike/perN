@@ -1,0 +1,9 @@
+#storybook-docs {
+    ul {
+        @apply list-outside list-disc pl-6 max-w-[40rem];
+
+        li {
+            @apply my-2;
+        }
+    }
+}
