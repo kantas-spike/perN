@@ -90,3 +90,53 @@ body {
     @apply text-base font-bold leading-m tracking-m;
   }
 }
+
+@layer base {
+  h1 {
+    @apply hl-l-mob mt-xl mb-m;
+  }
+
+  h2 {
+    @apply hl-m-mob mt-xl mb-m;
+  }
+
+  h3 {
+    @apply hl-s-mob mt-l mb-m;
+  }
+
+  h4 {
+    @apply hl-xs-mob mt-l mb-s;
+  }
+
+  h5 {
+    @apply hl-xxs-mob mt-m mb-s;
+  }
+
+  p {
+    @apply txt-body-l max-w-[40rem] my-s;
+  }
+
+  /* lg: */
+  @media (min-width: 768px) {
+    h1 {
+      @apply hl-l mt-xl mb-m;
+    }
+
+    h2 {
+      @apply hl-m mt-xl mb-m;
+    }
+
+    h3 {
+      @apply hl-s mt-l mb-m;
+    }
+
+    h4 {
+      @apply hl-xs mt-l mb-s;
+    }
+
+    h5 {
+      @apply hl-xxs mt-m mb-s;
+    }
+}
+
+}
