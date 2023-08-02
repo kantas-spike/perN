@@ -1,0 +1,735 @@
+import { Meta, Typeset, Unstyled } from '@storybook/blocks'
+import {noto_sans_jp} from '../lib/typography'
+
+<Meta title="スタイル/タイポグラフィ" />
+<div className={noto_sans_jp.variable}>
+# タイポグラフィ
+
+[デザインシステム｜デジタル庁](https://www.digital.go.jp/policies/servicedesign/designsystem/) を参考に、
+アプリで使用するタイポグラフィを選びます。
+
+なるべく[Tailwind CSS](https://tailwindcss.com/)標準のユーティリティクラスを利用します。
+
+## フォントファミリー
+
+以下を使用する。
+
+<Unstyled>
+<ul className="text-on-surface font-sans text-xl list-disc list-inside">
+    <li className="font-normal"><span>{noto_sans_jp.style.fontFamily} Regular</span></li>
+    <li className="font-medium"><span>{noto_sans_jp.style.fontFamily} Medium</span></li>
+    <li className="font-bold"><span>{noto_sans_jp.style.fontFamily} Bold</span></li>
+</ul>
+</Unstyled>
+
+## 見出し
+
+「見出しサイズ」と「見出しレベル」を分けています。
+
+「見出しレベル」を基準に、ニーズに合せて、最適な組合せを選ぶことができます。
+
+<Unstyled>
+<div className="text-on-surface bg-surface rounded-md p-4 my-4 font-sans">
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="text-on-surface col-span-5">見出しサイズ</div>
+        <div className="text-on-surface col-span-1">サイズ</div>
+        <div className="text-on-surface col-span-1">ウェイト</div>
+        <div className="text-on-surface col-span-1">行間隔</div>
+        <div className="text-on-surface col-span-1">文字間隔</div>
+    </div>
+{
+    [
+        {
+            title: '見出しXXL',
+            size: {
+                cls: 'text-6xl',
+                desc: '60px',
+            },
+            weight: {
+                cls: 'font-normal',
+                desc: 'Regular',
+            },
+            height: {
+                cls: 'leading-s',
+                desc: '1.4',
+            },
+            spacing: {
+                cls: 'tracking-m',
+                desc: '0.04em',
+            },
+        },
+        {
+            title: '見出しXL',
+            size: {
+                cls: 'text-5xl',
+                desc: '48px',
+            },
+            weight: {
+                cls: 'font-normal',
+                desc: 'Regular',
+            },
+            height: {
+                cls: 'leading-s',
+                desc: '1.4',
+            },
+            spacing: {
+                cls: 'tracking-m',
+                desc: '0.04em',
+            },
+        },
+        {
+            title: '見出しL',
+            size: {
+                cls: 'text-4xl',
+                desc: '36px',
+            },
+            weight: {
+                cls: 'font-normal',
+                desc: 'Regular',
+            },
+            height: {
+                cls: 'leading-s',
+                desc: '1.4',
+            },
+            spacing: {
+                cls: 'tracking-m',
+                desc: '0.04em',
+            },
+        },
+        {
+            title: '見出しM',
+            size: {
+                cls: 'text-3xl',
+                desc: '30px',
+            },
+            weight: {
+                cls: 'font-normal',
+                desc: 'Regular',
+            },
+            height: {
+                cls: 'leading-m',
+                desc: '1.5',
+            },
+            spacing: {
+                cls: 'tracking-m',
+                desc: '0.04em',
+            },
+        },
+        {
+            title: '見出しS',
+            size: {
+                cls: 'text-2xl',
+                desc: '24px',
+            },
+            weight: {
+                cls: 'font-normal',
+                desc: 'Regular',
+            },
+            height: {
+                cls: 'leading-m',
+                desc: '1.5',
+            },
+            spacing: {
+                cls: 'tracking-m',
+                desc: '0.04em',
+            },
+        },
+        {
+            title: '見出しXS',
+            size: {
+                cls: 'text-xl',
+                desc: '20px',
+            },
+            weight: {
+                cls: 'font-normal',
+                desc: 'Regular',
+            },
+            height: {
+                cls: 'leading-m',
+                desc: '1.5',
+            },
+            spacing: {
+                cls: 'tracking-m',
+                desc: '0.04em',
+            },
+        },
+        {
+            title: '見出しXXS',
+            size: {
+                cls: 'text-lg',
+                desc: '18px',
+            },
+            weight: {
+                cls: 'font-normal',
+                desc: 'Regular',
+            },
+            height: {
+                cls: 'leading-m',
+                desc: '1.5',
+            },
+            spacing: {
+                cls: 'tracking-m',
+                desc: '0.04em',
+            },
+        },
+        {
+            title: '見出しLモバイル',
+            size: {
+                cls: 'text-3xl',
+                desc: '30px',
+            },
+            weight: {
+                cls: 'font-medium',
+                desc: 'Medium',
+            },
+            height: {
+                cls: 'leading-m',
+                desc: '1.5',
+            },
+            spacing: {
+                cls: 'tracking-m',
+                desc: '0.04em',
+            },
+        },
+        {
+            title: '見出しMモバイル',
+            size: {
+                cls: 'text-2xl',
+                desc: '24px',
+            },
+            weight: {
+                cls: 'font-medium',
+                desc: 'Medium',
+            },
+            height: {
+                cls: 'leading-m',
+                desc: '1.5',
+            },
+            spacing: {
+                cls: 'tracking-m',
+                desc: '0.04em',
+            },
+        },
+        {
+            title: '見出しSモバイル',
+            size: {
+                cls: 'text-xl',
+                desc: '20px',
+            },
+            weight: {
+                cls: 'font-medium',
+                desc: 'Medium',
+            },
+            height: {
+                cls: 'leading-m',
+                desc: '1.5',
+            },
+            spacing: {
+                cls: 'tracking-m',
+                desc: '0.04em',
+            },
+        },
+        {
+            title: '見出しXSモバイル',
+            size: {
+                cls: 'text-lg',
+                desc: '18px',
+            },
+            weight: {
+                cls: 'font-medium',
+                desc: 'Medium',
+            },
+            height: {
+                cls: 'leading-m',
+                desc: '1.5',
+            },
+            spacing: {
+                cls: 'tracking-m',
+                desc: '0.04em',
+            },
+        },
+        {
+            title: '見出しXXSモバイル',
+            size: {
+                cls: 'text-base',
+                desc: '16px',
+            },
+            weight: {
+                cls: 'font-medium',
+                desc: 'Medium',
+            },
+            height: {
+                cls: 'leading-l',
+                desc: '1.7',
+            },
+            spacing: {
+                cls: 'tracking-m',
+                desc: '0.04em',
+            },
+        },
+    ].map((val, idx) => (
+        <div key={idx} className="grid grid-cols-12 gap-4 items-center mb-4 pb-4 border-b border-outline-variant">
+            <div className={`text-on-surface col-span-5 ${val.size.cls} ${val.weight.cls} ${val.height.cls} ${val.spacing.cls}`}>{val.title}</div>
+            <div className="text-on-surface col-span-1 text-xs">{val.size.cls}<br/>({val.size.desc})</div>
+            <div className="text-on-surface col-span-1 text-xs">{val.weight.cls}<br/>({val.weight.desc})</div>
+            <div className="text-on-surface col-span-1 text-xs">{val.height.cls}<br/>({val.height.desc})</div>
+            <div className="text-on-surface col-span-1 text-xs">{val.spacing.cls}<br/>({val.spacing.desc})</div>
+        </div>
+    ))
+}
+</div>
+</Unstyled>
+
+<Unstyled>
+<div className="text-on-surface bg-surface rounded-md p-4 my-4 font-sans">
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="text-on-surface col-span-2">推奨見出しレベル</div>
+        <div className="text-on-surface col-span-5">デスクトップ</div>
+        <div className="text-on-surface col-span-5">モバイル</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-4 border-b border-outline-variant">
+        <div className="text-on-surface col-span-2"><code className="bg-surface-container-highest px-2 py-1">h1</code></div>
+        <div className="text-on-surface col-span-5 text-4xl font-normal leading-s trackgin-m">見出しL</div>
+        <div className="text-on-surface col-span-5 text-3xl font-medium leading-m trackgin-m">見出しLモバイル</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-4 border-b border-outline-variant">
+        <div className="text-on-surface col-span-2"><code className="bg-surface-container-highest px-2 py-1">h2</code></div>
+        <div className="text-on-surface col-span-5 text-3xl font-normal leading-m trackgin-m">見出しM</div>
+        <div className="text-on-surface col-span-5 text-2xl font-medium leading-m trackgin-m">見出しMモバイル</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-4 border-b border-outline-variant">
+        <div className="text-on-surface col-span-2"><code className="bg-surface-container-highest px-2 py-1">h3</code></div>
+        <div className="text-on-surface col-span-5 text-2xl font-normal leading-m trackgin-m">見出しS</div>
+        <div className="text-on-surface col-span-5 text-xl font-medium leading-m trackgin-m">見出しSモバイル</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-4 border-b border-outline-variant">
+        <div className="text-on-surface col-span-2"><code className="bg-surface-container-highest px-2 py-1">h4</code></div>
+        <div className="text-on-surface col-span-5 text-xl font-normal leading-m trackgin-m">見出しXS</div>
+        <div className="text-on-surface col-span-5 text-lg font-medium leading-m trackgin-m">見出しXSモバイル</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-4 border-b border-outline-variant">
+        <div className="text-on-surface col-span-2"><code className="bg-surface-container-highest px-2 py-1">h5</code></div>
+        <div className="text-on-surface col-span-5 text-lg font-normal leading-m trackgin-m">見出しXXS</div>
+        <div className="text-on-surface col-span-5 text-base font-medium leading-l trackgin-m">見出しXXSモバイル</div>
+    </div>
+</div>
+</Unstyled>
+
+## その他のテキストスタイル
+
+デフォルトのサイズを基準に、必要であればサイズを下げて使用できます。
+
+<Unstyled>
+<div className="text-on-surface bg-surface rounded-md p-4 my-4 font-sans">
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="col-span-1">名前</div>
+        <div className="col-span-2">サイズ</div>
+        <div className="col-span-2">ウェイト</div>
+        <div className="col-span-2">行間隔</div>
+        <div className="col-span-2">文字間隔</div>
+        <div className="col-span-3">使用方法</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="col-span-1 text-base font-normal leading-l trackgin-m">本文L</div>
+        <div className="col-span-2">text-base<br/>(16px)</div>
+        <div className="col-span-2">font-normal<br/>(Regular)</div>
+        <div className="col-span-2">leading-l<br/>(1.7)</div>
+        <div className="col-span-2">trackgin-m<br/>(0.04em)</div>
+        <div className="col-span-3 text-base font-normal leading-l trackgin-m">デフォルトの本文テキスト</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="col-span-1 text-sm font-normal leading-l trackgin-m">本文M</div>
+        <div className="col-span-2">text-sm<br/>(14px)</div>
+        <div className="col-span-2">font-normal<br/>(Regular)</div>
+        <div className="col-span-2">leading-l<br/>(1.7)</div>
+        <div className="col-span-2">trackgin-m<br/>(0.04em)</div>
+        <div className="col-span-3 text-sm font-normal leading-l trackgin-m">テキストが多いとき、表示領域が限られているときに使用できます。</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="col-span-1 text-sm font-medium leading-m trackgin-m">ラベルL</div>
+        <div className="col-span-2">text-sm<br/>(14px)</div>
+        <div className="col-span-2">font-medium<br/>(Medium)</div>
+        <div className="col-span-2">leading-m<br/>(1.5)</div>
+        <div className="col-span-2">trackgin-m<br/>(0.04em)</div>
+        <div className="col-span-3 text-sm font-medium leading-m trackgin-m">デフォルトのラベルテキスト。</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="col-span-1 text-xs font-medium leading-m trackgin-m">ラベルM</div>
+        <div className="col-span-2">text-xs<br/>(12px)</div>
+        <div className="col-span-2">font-medium<br/>(Medium)</div>
+        <div className="col-span-2">leading-m<br/>(1.5)</div>
+        <div className="col-span-2">trackgin-m<br/>(0.04em)</div>
+        <div className="col-span-3 text-xs font-medium leading-m trackgin-m">テキストが多いとき、表示領域が限られているときに使用できます。</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="col-span-1 text-xs font-normal leading-l trackgin-s">補足L</div>
+        <div className="col-span-2">text-xs<br/>(12px)</div>
+        <div className="col-span-2">font-normal<br/>(Regular)</div>
+        <div className="col-span-2">leading-l<br/>(1.7)</div>
+        <div className="col-span-2">trackgin-s<br/>(0.02em)</div>
+        <div className="col-span-3 text-xs font-normal leading-l trackgin-s">デフォルトの補足テキスト。</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="col-span-1 text-[10px] font-normal leading-l trackgin-s">補足M</div>
+        <div className="col-span-2">text-[10px]<br/>(10px)</div>
+        <div className="col-span-2">font-normal<br/>(Regular)</div>
+        <div className="col-span-2">leading-l<br/>(1.7)</div>
+        <div className="col-span-2">trackgin-s<br/>(0.02em)</div>
+        <div className="col-span-3 text-[10px] font-normal leading-l trackgin-s">テキストが多いとき、表示領域が限られているときに使用できます。</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="col-span-1 text-base font-bold leading-m trackgin-m">ボタン</div>
+        <div className="col-span-2">text-base<br/>(16px)</div>
+        <div className="col-span-2">font-bold<br/>(Bold)</div>
+        <div className="col-span-2">leading-m<br/>(1.5)</div>
+        <div className="col-span-2">trackgin-m<br/>(0.04em)</div>
+        <div className="col-span-3 text-base font-bold leading-m trackgin-m">ボタンの中のテキストに使用します。</div>
+    </div>
+</div>
+</Unstyled>
+
+## 注釈
+
+文章に書かれている言葉に補足説明が必要な際に注釈を使用します。
+
+注釈説明は文末に表示し、複数ある場合は、※1、※2...といった様に数字を増やし箇条書きで説明します。
+
+<Unstyled>
+<div className="text-on-surface bg-surface border border-outline rounded-md p-4 my-4 font-sans">
+
+<p className="text-base font-normal leading-l trackgin-m mb-8">本文中の一定箇所に注釈を使用する場合は、このように<sup>※1</sup>になります</p>
+
+<ul className="text-xs font-normal leading-l trackgin-s">
+<li>※1 注釈リスト1</li>
+<li>※2 注釈リスト2</li>
+<li>※3 注釈リスト3</li>
+</ul>
+</div>
+</Unstyled>
+
+
+## 箇条書き
+
+箇条書きを使用する場合は、行頭にインデント(字下げ)を設け、2行目以降もテキストが回り込まない様に同じ位置から文章を始めます。
+
+<Unstyled>
+<div className="text-on-surface bg-surface border border-outline rounded-md p-4 my-4 font-sans">
+    <div className="w-48">
+    <ul className="list-disc pl-4">
+        <li>ビュレットリスト</li>
+        <li>ビュレットリストが2行の場合</li>
+        <li>ビュレットリストが2行の場合</li>
+    </ul>
+    </div>
+</div>
+</Unstyled>
+
+~~~html
+<div className="w-48">
+    <ul className="list-disc pl-4">
+        <li>ビュレットリスト</li>
+        <li>ビュレットリストが2行の場合</li>
+        <li>ビュレットリストが2行の場合</li>
+    </ul>
+</div>
+~~~
+
+ 箇条書きには行頭インデントが「・」となる場合と、アラビア数字、漢数字、カナ、アルファベットとなる場合が存在します。
+
+ 箇条書きが続く画面の場合は、「・」ではなくカナを使用する事で、各項目の視認性を上げる事ができます。
+
+ <Unstyled>
+<div className="text-on-surface bg-surface border border-outline rounded-md p-4 my-4 font-sans">
+    <div className="flex gap-4">
+        <div className="w-1/2 p-6 m-6 border border-outline-variant rounded-md bg-surface-container">
+            <p className="mb-4">見やすい箇条書き</p>
+
+            <ul className="list-[katakana] pl-8">
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>もっと続いていきます...</li>
+            </ul>
+        </div>
+        <div className="w-1/2 p-6 m-6 border border-outline-variant rounded-md bg-surface-container">
+            <p className="mb-4">見にくい箇条書き</p>
+
+            <ul className="list-disc pl-4">
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>もっと続いていきます...</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</Unstyled>
+
+リストの下に入れ子のリストが続く場合は、「・」やカナではなく、
+行頭インデントは番号やアルファベットを使用します。
+
+行頭インデントが番号やアルファベットになる場合は、
+親となる行頭インデントと入れ子になるリストの行頭インデントは異なるものを使用しましょう。
+
+<Unstyled>
+<div className="text-on-surface bg-surface border border-outline rounded-md p-4 my-4 font-sans">
+    <div className="flex gap-4">
+        <div className="w-1/2 p-6 m-6 border border-outline-variant rounded-md bg-surface-container">
+            <p className="mb-4">見やすい箇条書き</p>
+            <ul className="list-disc pl-4">
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>
+                    <p>箇条書きです。</p>
+                    <ul className="list-[lower-alpha] pl-4">
+                        <li>箇条書きです。</li>
+                        <li>箇条書きです。</li>
+                        <li>箇条書きです。</li>
+                    </ul>
+                </li>
+                <li>箇条書きです。</li>
+            </ul>
+        </div>
+        <div className="w-1/2 p-6 m-6 border border-outline-variant rounded-md bg-surface-container">
+            <p className="mb-4">見にくい箇条書き</p>
+
+            <ul className="list-disc pl-4">
+                <li>箇条書きです。</li>
+                <li>箇条書きです。</li>
+                <li>
+                    <p>箇条書きです。</p>
+                    <ul className="list-disc pl-4">
+                        <li>箇条書きです。</li>
+                        <li>箇条書きです。</li>
+                        <li>箇条書きです。</li>
+                    </ul>
+                </li>
+                <li>箇条書きです。</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</Unstyled>
+
+## 太字(ボールド)
+
+ボールドを使用する場合は、必ずフォントウェイトのBoldを使用します。
+
+ウェイトを変更せずに境界線を追加する、いわゆる疑似ボールドは使用しないでください。
+
+~~~html
+<p>
+    本文中の<span className="font-bold">特定の箇所</span>だけ強調して示す。
+</p>
+~~~
+
+## テキスト装飾
+
+打ち消し線を使用する場合は、該当箇所の文字中央に横断する状態で線を引きます。
+
+打ち消し線は濫用せず、消去可能な文章は消去対応しますが、
+文章は消去せずに記述を消したい場合のみ(例: 採用情報等で既に期日が過ぎてしまった日時など)用いる事を推奨します。
+
+
+<Unstyled>
+<div className="text-on-surface bg-surface border border-outline rounded-md p-4 my-4 font-sans">
+<div className="mb-6 text-xl trackgin-m line-through">2021年8月25日</div>
+<p>
+文章中に打ち消し線を使用する場合は、<span className="line-through">2021年8月25日</span>の様に該当箇所に線を引きます。
+既に終了しているイベントの日付等に使用してください。
+</p>
+</div>
+</Unstyled>
+
+## 仕様
+
+### デザイントークン
+
+以下のトークンを[Tailwind CSS](https://tailwindcss.com/)のユーティリティクラスとして追加する。
+
+<Unstyled>
+<div className="text-on-surface bg-surface rounded-md p-4 my-4 font-sans">
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="col-span-2">分類</div>
+        <div className="col-span-2">トークン</div>
+        <div className="col-span-2">サイズ</div>
+        <div className="col-span-6">使用方法</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 border-outline-variant">
+        <div className="col-span-2 row-span-6 text-center">行間隔</div>
+        <div className="col-span-2 px-2">leading-s</div>
+        <div className="col-span-2 px-2">1.4</div>
+        <div className="col-span-6 px-2">大きなフォントサイズに使用します</div>
+        <div className="col-start-3 col-span-10 border-b-2 border-outline-variant"></div>
+        <div className="col-span-2 px-2">leading-m</div>
+        <div className="col-span-2 px-2">1.5</div>
+        <div className="col-span-6 px-2">ラベルやボタン、大きめのフォントサイズに使用します</div>
+        <div className="col-start-3 col-span-10 border-b-2 border-outline-variant"></div>
+        <div className="col-span-2 px-2">leading-l</div>
+        <div className="col-span-2 px-2">1.7</div>
+        <div className="col-span-6 px-2">小さなフォントサイズの可読性を保つために使用します</div>
+        <div className="col-span-12 border-b-2 border-outline-variant"></div>
+
+        <div className="col-span-2 row-span-4 text-center">文字間隔</div>
+        <div className="col-span-2 px-2">tracking-s</div>
+        <div className="col-span-2 px-2">0.02</div>
+        <div className="col-span-6 px-2">小さなフォントサイズの可読性を保つために使用します。</div>
+        <div className="col-start-3 col-span-10 border-b-2 border-outline-variant"></div>
+        <div className="col-span-2 px-2">tracking-m</div>
+        <div className="col-span-2 px-2">0.04</div>
+        <div className="col-span-6 px-2">デフォルトのletter-spacing</div>
+        <div className="col-span-12 border-b-2 border-outline-variant"></div>
+
+        <div className="col-span-2 row-span-6 text-center">ウェイト<br/><p>([Tailwind CSS](https://tailwindcss.com/)の標準クラスをそのまま使用)</p></div>
+        <div className="col-span-2 px-2">font-normal</div>
+        <div className="col-span-2 px-2">Regular</div>
+        <div className="col-span-6 px-2">デフォルトのウェイト</div>
+        <div className="col-start-3 col-span-10 border-b-2 border-outline-variant"></div>
+        <div className="col-span-2 px-2">font-medium</div>
+        <div className="col-span-2 px-2">Medium</div>
+        <div className="col-span-6 px-2">ラベルやモバイルの見出しに使用します。</div>
+        <div className="col-start-3 col-span-10 border-b-2 border-outline-variant"></div>
+        <div className="col-span-2 px-2">font-bold</div>
+        <div className="col-span-2 px-2">Bold</div>
+        <div className="col-span-6 px-2">強調表現に使用します。</div>
+        <div className="col-span-12 border-b-2 border-outline-variant"></div>
+    </div>
+</div>
+</Unstyled>
+
+### 見出しサイズと見出しレベル
+
+以下のトークンを[Tailwind CSS](https://tailwindcss.com/)のユーティリティクラスとして追加する。
+
+<Unstyled>
+<div className="text-on-surface bg-surface rounded-md p-4 my-4 font-sans">
+    <div className="grid grid-cols-12 gap-4 items-center mb-4">
+        <div className="col-span-2">分類</div>
+        <div className="col-span-3">トークン</div>
+        <div className="col-span-7">説明</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-4 border-b-2 border-outline-variant">
+        <div className="col-span-full border-b-2 border-outline-variant"></div>
+        <div className="col-span-2 px-2">見出し</div>
+        <div className="col-start-3 col-span-3 px-2">hl-l</div>
+        <div className="col-span-7 hl-l">
+            <div>見出しL</div>
+            <p className="my-2">デスクトップの<span className="bg-surface-container px-2">h1</span>に使用</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">hl-m</div>
+        <div className="col-span-7 hl-m">
+            <div>見出しM</div>
+            <p className="my-2">デスクトップの<span className="bg-surface-container px-2">h2</span>に使用</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">hl-s</div>
+        <div className="col-span-7 hl-s">
+            <div>見出しS</div>
+            <p className="my-2">デスクトップの<span className="bg-surface-container px-2">h3</span>に使用</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">hl-xs</div>
+        <div className="col-span-7 hl-xs">
+            <div>見出しXS</div>
+            <p className="my-2">デスクトップの<span className="bg-surface-container px-2">h4</span>に使用</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">hl-xxs</div>
+        <div className="col-span-7 hl-xss">
+            <div>見出しXSS</div>
+            <p className="my-2">デスクトップの<span className="bg-surface-container px-2">h5</span>に使用</p>
+        </div>
+        <div className="col-span-full border-b-2 border-outline-variant"></div>
+        <div className="col-span-2 px-2">見出し<br/>モバイル</div>
+        <div className="col-start-3 col-span-3 px-2">hl-l-mob</div>
+        <div className="col-span-7 hl-l-mob">
+            <div>見出しL</div>
+            <p className="my-2">モバイルの<span className="bg-surface-container px-2">h1</span>に使用</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">hl-m-mob</div>
+        <div className="col-span-7 hl-m-mob">
+            <div>見出しM</div>
+            <p className="my-2">モバイルの<span className="bg-surface-container px-2">h2</span>に使用</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">hl-s-mob</div>
+        <div className="col-span-7 hl-s-mob">
+            <div>見出しS</div>
+            <p className="my-2">モバイルの<span className="bg-surface-container px-2">h3</span>に使用</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">hl-xs-mob</div>
+        <div className="col-span-7 hl-xs-mob">
+            <div>見出しXS</div>
+            <p className="my-2">モバイルの<span className="bg-surface-container px-2">h4</span>に使用</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">hl-xxs-mob</div>
+        <div className="col-span-7 hl-xss-mob">
+            <div>見出しXSS</div>
+            <p className="my-2">モバイルの<span className="bg-surface-container px-2">h5</span>に使用</p>
+        </div>
+        <div className="col-span-full border-b-2 border-outline-variant"></div>
+        <div className="col-span-2 px-2">その他のテキストスタイル</div>
+        <div className="col-start-3 col-span-3 px-2">txt-body-l</div>
+        <div className="col-span-7 txt-body-l">
+            <div>本文L</div>
+            <p className="my-2">デフォルトの本文テキスト</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">txt-body-m</div>
+        <div className="col-span-7 txt-body-m">
+            <div>本文M</div>
+            <p className="my-2">テキストの多いとき、表示領域が限られているとき使用できます。</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">txt-label-l</div>
+        <div className="col-span-7 txt-label-l">
+            <div>ラベルL</div>
+            <p className="my-2">デフォルトのラベルテキスト</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">txt-label-m</div>
+        <div className="col-span-7 txt-label-m">
+            <div>ラベルM</div>
+            <p className="my-2">テキストの多いとき、表示領域が限られているとき使用できます。</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">txt-comment-l</div>
+        <div className="col-span-7 txt-comment-l">
+            <div>補足L</div>
+            <p className="my-2">デフォルトの補足テキスト</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">txt-comment-m</div>
+        <div className="col-span-7 txt-comment-m">
+            <div>補足M</div>
+            <p className="my-2">テキストの多いとき、表示領域が限られているとき使用できます。</p>
+        </div>
+        <div className="col-start-3 col-span-11 border-b-2 border-outline-variant"></div>
+        <div className="col-start-3 col-span-3 px-2">txt-button</div>
+        <div className="col-span-7 txt-button">
+            <div>ボタン</div>
+            <p className="my-2">ボタンの中のテキストに使用します</p>
+        </div>
+    </div>
+</div>
+</Unstyled>
+
+</div>
