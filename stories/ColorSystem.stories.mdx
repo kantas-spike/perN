@@ -1,5 +1,6 @@
 {/* Colors.mdx */}
 
+import { Fragment } from 'react'
 import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
 import  { key_colors, create_tones_of_accent_colors, create_tones_of_neutral_colors } from '../lib/color_system'
 
@@ -8,7 +9,7 @@ import tailwindConfig from '../tailwind.config.js'
 
 export const fullConfig = resolveConfig(tailwindConfig)
 
-<Meta title="Color System" />
+<Meta title="スタイル/カラー" />
 
 # Color System
 
@@ -48,12 +49,12 @@ export const fullConfig = resolveConfig(tailwindConfig)
 そこで、[以前作成したカラーホイールツール](https://kantas-spike.github.io/portfolio/articles/2022/08/04-study-color-wheel/)を使って、
 青の類似色(Analogous)を拾いました。これらを、それぞれ`Primary`と`Secondary`にします。
 
-- <span class="bg-[#3237cd] text-white px-1">Primary: #3237cd</span>
-- <span class="bg-[#3284cd] text-white px-1">Secondary: #3284cd</span>
+- <span className="bg-[#3237cd] text-white px-1">Primary: #3237cd</span>
+- <span className="bg-[#3284cd] text-white px-1">Secondary: #3284cd</span>
 
 さらに、`Primary`の補色を拾い、`Tertiary`にします。
 
-- <span class="bg-[#cdc832] text-white px-1">Tertiary: #cdc832</span>
+- <span className="bg-[#cdc832] text-white px-1">Tertiary: #cdc832</span>
 
 
 <div className="border-2 rounded-md m-4 p-4">
@@ -156,23 +157,23 @@ Neutral colors毎に、個別のプレフィックスを決め、`プレフィ�
 #### 使用例
 
 <div className="border-2 rounded-md m-4 p-4">
-  <div class="flex gap-4 h-32 justify-stretch">
-    <div class="border flex bg-tones-N_98 text-black font-bold items-center justify-center grow">
+  <div className="flex gap-4 h-32 justify-stretch">
+    <div className="border flex bg-tones-N_98 text-black font-bold items-center justify-center grow">
       <div>N-98</div>
     </div>
-    <div class="border flex bg-tones-N_10 text-white font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-N_10 text-white font-bold items-center justify-center grow">
       <div>N-10</div>
     </div>
-    <div class="border flex bg-tones-N_94 text-black font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-N_94 text-black font-bold items-center justify-center grow">
       <div>N-94</div>
     </div>
-    <div class="border flex bg-tones-NV_50 text-white font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-NV_50 text-white font-bold items-center justify-center grow">
       <div>N-50</div>
     </div>
-    <div class="border flex bg-tones-NV_80 text-black font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-NV_80 text-black font-bold items-center justify-center grow">
       <div>NV-80</div>
     </div>
-    <div class="border flex bg-tones-NV_30 text-white font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-NV_30 text-white font-bold items-center justify-center grow">
       <div>NV-30</div>
     </div>
   </div>
@@ -207,23 +208,23 @@ Accent colors毎に、個別のプレフィックスを決め、`プレフィッ
 #### 使用例
 
 <div className="border-2 rounded-md m-4 p-4">
-  <div class="flex gap-4 h-32 justify-stretch">
-    <div class="border flex bg-tones-P_40 text-white font-bold items-center justify-center grow">
+  <div className="flex gap-4 h-32 justify-stretch">
+    <div className="border flex bg-tones-P_40 text-white font-bold items-center justify-center grow">
       <div>P-40</div>
     </div>
-    <div class="border flex bg-tones-S_40 text-white font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-S_40 text-white font-bold items-center justify-center grow">
       <div>S-40</div>
     </div>
-    <div class="border flex bg-tones-T_40 text-white font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-T_40 text-white font-bold items-center justify-center grow">
       <div>T-40</div>
     </div>
-    <div class="border flex bg-tones-P_90 text-black font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-P_90 text-black font-bold items-center justify-center grow">
       <div>P-90</div>
     </div>
-    <div class="border flex bg-tones-S_90 text-black font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-S_90 text-black font-bold items-center justify-center grow">
       <div>S-90</div>
     </div>
-    <div class="border flex bg-tones-T_90 text-black font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-T_90 text-black font-bold items-center justify-center grow">
       <div>T-90</div>
     </div>
   </div>
@@ -246,17 +247,17 @@ Additional colors毎に、個別のプレフィックスを決め、`プレフ�
 #### 使用例
 
 <div className="border-2 rounded-md m-4 p-4">
-  <div class="flex gap-4 h-32 justify-stretch">
-    <div class="border flex bg-tones-E_40 text-white font-bold items-center justify-center grow">
+  <div className="flex gap-4 h-32 justify-stretch">
+    <div className="border flex bg-tones-E_40 text-white font-bold items-center justify-center grow">
       <div>E-40</div>
     </div>
-    <div class="border flex bg-tones-E_100 text-black font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-E_100 text-black font-bold items-center justify-center grow">
       <div>E-100</div>
     </div>
-    <div class="border flex bg-tones-E_90 text-black font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-E_90 text-black font-bold items-center justify-center grow">
       <div>E-90</div>
     </div>
-    <div class="border flex bg-tones-E_10 text-white font-bold items-center justify-center grow">
+    <div className="border flex bg-tones-E_10 text-white font-bold items-center justify-center grow">
       <div>E-10</div>
     </div>
   </div>
@@ -337,17 +338,17 @@ Additional colors毎に、個別のプレフィックスを決め、`プレフ�
 
 以下は、`Base系`と`On Base系`の色を、背景色とテキスト色として組み合わせて使用した場合の例になります。
 
-{/* class="bg-primary bg-on-primary text-primary text-on-primary" */}
-{/* class="bg-primary-container bg-on-primary-container text-primary-container text-on-primary-container" */}
-{/* class="bg-secondary bg-on-secondary text-secondary text-on-secondary" */}
-{/* class="bg-secondary-container bg-on-secondary-container text-secondary-container text-on-secondary-container" */}
-{/* class="bg-tertiary bg-on-tertiary text-tertiary text-on-tertiary" */}
-{/* class="bg-tertiary-container bg-on-tertiary-container text-tertiary-container text-on-tertiary-container" */}
-{/* class="bg-error bg-on-error text-error text-on-error" */}
-{/* class="bg-error-container bg-on-error-container text-error-container text-on-error-container" */}
+{/* className="bg-primary bg-on-primary text-primary text-on-primary" */}
+{/* className="bg-primary-container bg-on-primary-container text-primary-container text-on-primary-container" */}
+{/* className="bg-secondary bg-on-secondary text-secondary text-on-secondary" */}
+{/* className="bg-secondary-container bg-on-secondary-container text-secondary-container text-on-secondary-container" */}
+{/* className="bg-tertiary bg-on-tertiary text-tertiary text-on-tertiary" */}
+{/* className="bg-tertiary-container bg-on-tertiary-container text-tertiary-container text-on-tertiary-container" */}
+{/* className="bg-error bg-on-error text-error text-on-error" */}
+{/* className="bg-error-container bg-on-error-container text-error-container text-on-error-container" */}
 
 <div className="border-2 rounded-md m-4 p-4">
-  <div class="flex gap-2 justify-stretch">
+  <div className="flex gap-2 justify-stretch">
     { [
     {name: 'Primary', color: 'primary', prefix: 'P-'},
     {name: 'Secondary', color: 'secondary', prefix: 'S-'},
@@ -463,30 +464,30 @@ Additional colors毎に、個別のプレフィックスを決め、`プレフ�
 #### 使用例
 
 <div className="border-2 rounded-md m-4 p-4">
-  <div class="flex gap-2 justify-stretch">
-    <div class="border border-outline flex bg-surface-dim text-on-surface font-bold items-center flex-col gap-2 justify-center grow p-2 text-center">
-      <div class="text-on-surface">Surface Dim</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container-lowest text-on-surface-variant">Surface Container Lowest</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container-low text-on-surface-variant">Surface Container Low</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container text-on-surface-variant">Surface Container</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container-high text-on-surface-variant">Surface Container High</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container-highest text-on-surface-variant">Surface Container Highest</div>
+  <div className="flex gap-2 justify-stretch">
+    <div className="border border-outline flex bg-surface-dim text-on-surface font-bold items-center flex-col gap-2 justify-center grow p-2 text-center">
+      <div className="text-on-surface">Surface Dim</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container-lowest text-on-surface-variant">Surface Container Lowest</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container-low text-on-surface-variant">Surface Container Low</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container text-on-surface-variant">Surface Container</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container-high text-on-surface-variant">Surface Container High</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container-highest text-on-surface-variant">Surface Container Highest</div>
     </div>
-    <div class="border border-outline flex bg-surface text-on-surface font-bold items-center flex-col gap-2 justify-center grow p-2 text-center">
-      <div class="text-on-surface">Surface</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container-lowest text-on-surface-variant">Surface Container Lowest</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container-low text-on-surface-variant">Surface Container Low</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container text-on-surface-variant">Surface Container</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container-high text-on-surface-variant">Surface Container High</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container-highest text-on-surface-variant">Surface Container Highest</div>
+    <div className="border border-outline flex bg-surface text-on-surface font-bold items-center flex-col gap-2 justify-center grow p-2 text-center">
+      <div className="text-on-surface">Surface</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container-lowest text-on-surface-variant">Surface Container Lowest</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container-low text-on-surface-variant">Surface Container Low</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container text-on-surface-variant">Surface Container</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container-high text-on-surface-variant">Surface Container High</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container-highest text-on-surface-variant">Surface Container Highest</div>
     </div>
-    <div class="border border-outline flex bg-surface-bright text-on-surface font-bold items-center flex-col gap-2 justify-center grow p-2 text-center">
-      <div class="text-on-surface">Surface Bright</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container-lowest text-on-surface-variant">Surface Container Lowest</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container-low text-on-surface-variant">Surface Container Low</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container text-on-surface-variant">Surface Container</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container-high text-on-surface-variant">Surface Container High</div>
-      <div class="w-72 border border-outline py-10 bg-surface-container-highest text-on-surface-variant">Surface Container Highest</div>
+    <div className="border border-outline flex bg-surface-bright text-on-surface font-bold items-center flex-col gap-2 justify-center grow p-2 text-center">
+      <div className="text-on-surface">Surface Bright</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container-lowest text-on-surface-variant">Surface Container Lowest</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container-low text-on-surface-variant">Surface Container Low</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container text-on-surface-variant">Surface Container</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container-high text-on-surface-variant">Surface Container High</div>
+      <div className="w-72 border border-outline py-10 bg-surface-container-highest text-on-surface-variant">Surface Container Highest</div>
     </div>
   </div>
 </div>
@@ -517,9 +518,9 @@ Additional colors毎に、個別のプレフィックスを決め、`プレフ�
 #### 使用例
 
 <div className="border-2 rounded-md m-4 p-4 bg-surface">
-  <div class="flex gap-2 justify-stretch">
-    <div class="text-on-surface bg-surface-container p-4 rounded-md border-2 border-outline grow text-center">Outlineで囲ったテキスト</div>
-    <div class="text-on-surface-variant bg-surface-container-low p-4 rounded-md border-2 border-outline-variant grow text-center">Outline Variantで囲ったテキスト</div>
+  <div className="flex gap-2 justify-stretch">
+    <div className="text-on-surface bg-surface-container p-4 rounded-md border-2 border-outline grow text-center">Outlineで囲ったテキスト</div>
+    <div className="text-on-surface-variant bg-surface-container-low p-4 rounded-md border-2 border-outline-variant grow text-center">Outline Variantで囲ったテキスト</div>
   </div>
 </div>
 
@@ -552,9 +553,9 @@ Additional colors毎に、個別のプレフィックスを決め、`プレフ�
 #### 使用例
 
 <div className="border-2 rounded-md m-4 p-4 bg-inverse-surface">
-  <div class="flex gap-2 flex-col justify-stretch">
-    <div class="text-on-inverse-surface">Inverse Surface</div>
-    <div class="text-inverse-primary border-inverse-primary p-4 rounded-md border-2 grow font-bold text-2xl text-center">Inverse Primaryのボタン</div>
+  <div className="flex gap-2 flex-col justify-stretch">
+    <div className="text-on-inverse-surface">Inverse Surface</div>
+    <div className="text-inverse-primary border-inverse-primary p-4 rounded-md border-2 grow font-bold text-2xl text-center">Inverse Primaryのボタン</div>
   </div>
 </div>
 
@@ -602,3 +603,288 @@ Additional colors毎に、個別のプレフィックスを決め、`プレフ�
   />
 </ColorPalette>
 </div>
+
+## 仕様
+
+### デザイントークン
+
+[Tailwind CSS](https://tailwindcss.com/)のテーマを拡張し、`colors`に以下のトークンを追加する。
+
+#### トーンパレット
+
+[Color system – Material Design 3](https://m3.material.io/styles/color/the-color-system/key-colors-tones#5fdf196d-1e21-4d03-ae63-e802d61ad5ee)を参考にし、
+トーンパレットをトークンとして定義する。
+
+<div className="text-on-surface bg-surface rounded-md p-4 my-4 font-sans">
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="col-span-4">名前</div>
+        <div className="col-span-2">トークン</div>
+        <div className="col-span-6">説明</div>
+    </div>
+    <div className="grid grid-cols-12 gap-4 items-center pt-4 mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="col-span-4 bg-tones-P_40 text-on-primary p-4 text-center">Primary Key Color</div>
+        <div className="col-span-2">tones-P_xx</div>
+        <div className="col-span-6">Primary Key Colorのトーンパレット。`xx`部分には、0, 10, 20, 30, 40, 50, 60, 70, 80, 90 ,95, 99, 100 の13個のトーンが入る</div>
+        <div className="col-span-full border-b border-outline-variant"></div>
+        <div className="col-span-4 bg-tones-S_40 text-on-secondary p-4 text-center">Secondary Key Color</div>
+        <div className="col-span-2">tones-S_xx</div>
+        <div className="col-span-6">Secondary Key Colorのトーンパレット。`xx`部分には、0, 10, 20, 30, 40, 50, 60, 70, 80, 90 ,95, 99, 100 の13個のトーンが入る</div>
+        <div className="col-span-full border-b border-outline-variant"></div>
+        <div className="col-span-4 bg-tones-T_40 text-on-tertiary p-4 text-center">Tertiary Key Color</div>
+        <div className="col-span-2">tones-T_xx</div>
+        <div className="col-span-6">Tertiary Key Colorのトーンパレット。`xx`部分には、0, 10, 20, 30, 40, 50, 60, 70, 80, 90 ,95, 99, 100 の13個のトーンが入る</div>
+        <div className="col-span-full border-b border-outline-variant"></div>
+        <div className="col-span-4 bg-tones-E_40 text-on-error p-4 text-center">Error</div>
+        <div className="col-span-2">tones-E_xx</div>
+        <div className="col-span-6">Errorのトーンパレット。`xx`部分には、0, 10, 20, 30, 40, 50, 60, 70, 80, 90 ,95, 99, 100 の13個のトーンが入る</div>
+        <div className="col-span-full border-b border-outline-variant"></div>
+        <div className="col-span-4 bg-tones-N_40 text-on-primary p-4 text-center">Neutral Key Color</div>
+        <div className="col-span-2">tones-N_xx</div>
+        <div className="col-span-6">Neutral Key Colorのトーンパレット。`xx`部分には、0〜100 の101個のトーンが入る</div>
+        <div className="col-span-full border-b border-outline-variant"></div>
+        <div className="col-span-4 bg-tones-NV_40 text-on-primary p-4 text-center">Neutral Variant Key Color</div>
+        <div className="col-span-2">tones-NV_xx</div>
+        <div className="col-span-6">Neutral Variant Key Colorのトーンパレット。`xx`部分には、0〜100 の101個のトーンが入る</div>
+    </div>
+</div>
+
+
+#### システムトークン
+
+[Color system – Material Design 3](https://m3.material.io/styles/color/the-color-system/key-colors-tones#5fdf196d-1e21-4d03-ae63-e802d61ad5ee)を参考にし、
+ロールのトークンを定義する。
+
+ロールのトークンの色は、トーンパレットから選択する。
+
+<div className="text-on-surface bg-surface rounded-md p-4 my-4 font-sans">
+    <div className="grid grid-cols-12 gap-4 items-center mb-4 pb-2 border-b-2 border-outline-variant">
+        <div className="col-span-4">名前</div>
+        <div className="col-span-3">トークン</div>
+        <div className="col-span-5">説明</div>
+        <div className="col-span-full border-b-2 border-outline-variant"></div>
+        {
+          [
+            {
+            name: 'Primary',
+            token: 'primary',
+            desc: 'Primary Key Colorのbaseロール',
+            cls: `bg-primary text-on-primary`
+            },
+            {
+              name: 'Primary Container',
+              token: 'primary-container',
+              desc: 'Primary Key ColorのContainerロール',
+              cls: `bg-primary-container text-on-primary-container`
+            },
+            {
+            name: 'Secondary',
+            token: 'secondary',
+            desc: 'Secondary Key Colorのbaseロール',
+            cls: `bg-secondary text-on-secondary`
+            },
+            {
+              name: 'Secondary Container',
+              token: 'secondary-container',
+              desc: 'Secondary Key ColorのContainerロール',
+              cls: `bg-secondary-container text-on-secondary-container`
+            },
+            {
+            name: 'Tertiary',
+            token: 'tertiary',
+            desc: 'Tertiary Key Colorのbaseロール',
+            cls: `bg-tertiary text-on-tertiary`
+            },
+            {
+              name: 'Tertiary Container',
+              token: 'tertiary-container',
+              desc: 'Tertiary Key ColorのContainerロール',
+              cls: `bg-tertiary-container text-on-tertiary-container`
+            },
+            {
+            name: 'Error',
+            token: 'error',
+            desc: 'Errorのbaseロール',
+            cls: `bg-error text-on-error`
+            },
+            {
+              name: 'Error Container',
+              token: 'error-container',
+              desc: 'ErrorのContainerロール',
+              cls: `bg-error-container text-on-error-container`
+            },
+            {
+              name: 'Surface Dim',
+              token: 'surface-dim',
+              desc: 'SurfaceのDimロール',
+              cls: `bg-surface-dim text-on-surface`
+            }
+            ,
+            {
+              name: 'Surface',
+              token: 'surface',
+              desc: 'Surfaceのbaseロール',
+              cls: `bg-surface text-on-surface`
+            },
+            {
+              name: 'Surface Bright',
+              token: 'surface-bright',
+              desc: 'SurfaceのBrightロール',
+              cls: `bg-surface-bright text-on-surface`
+            },
+            {
+              name: 'Surface Container Lowest',
+              token: 'surface-container-lowest',
+              desc: 'Surface ContainerのLowestロール',
+              cls: `bg-surface-container-lowest text-on-surface`
+            },
+            {
+              name: 'Surface Container Low',
+              token: 'surface-container-low',
+              desc: 'Surface ContainerのLowロール',
+              cls: `bg-surface-container-low text-on-surface`
+            },
+            {
+              name: 'Surface Container',
+              token: 'surface-container',
+              desc: 'Surface Containerのbaseロール',
+              cls: `bg-surface-container text-on-surface`
+            },
+            {
+              name: 'Surface Container High',
+              token: 'surface-container-high',
+              desc: 'Surface ContainerのHighロール',
+              cls: `bg-surface-container-high text-on-surface`
+            },
+            {
+              name: 'Surface Container Highest',
+              token: 'surface-container-highest',
+              desc: 'Surface ContainerのHighestロール',
+              cls: `bg-surface-container-highest text-on-surface`
+            },
+            {
+              name: 'Outline',
+              token: 'outline',
+              desc: 'Outlineのbaseロール',
+              cls: `bg-outline text-on-primary`
+            },
+            {
+              name: 'Outline Variant',
+              token: 'outline-variant',
+              desc: 'Outlineのvariantロール',
+              cls: `bg-outline-variant text-on-surface`
+            },
+            {
+              name: 'Inverse Primary',
+              token: 'inverse-primary',
+              desc: 'Inverse Primaryロール',
+              cls: `bg-inverse-primary text-on-surface`
+            },
+            {
+              name: 'Inverse Surface',
+              token: 'inverse-surface',
+              desc: 'Inverse Surface ロール',
+              cls: `bg-inverse-surface text-on-inverse-surface`
+            },
+            {
+              name: 'Background',
+              token: 'background',
+              desc: 'Background ロール',
+              cls: `bg-background text-on-background`
+            },
+            {
+              name: 'Surface Tint',
+              token: 'surface_tint',
+              desc: 'Surface Tint ロール',
+              cls: `bg-surface_tint text-on-primary`
+            },
+            {
+              name: 'Scrim',
+              token: 'scrim',
+              desc: 'Scrim ロール',
+              cls: `bg-scrim text-on-primary`
+            },
+            {
+              name: 'On Primary',
+              token: 'on-primary',
+              desc: 'On Primaryのbaseロール',
+              cls: `bg-on-primary text-primary`
+            },
+            {
+              name: 'On Primary Container',
+              token: 'on-primary-container',
+              desc: 'On PrimaryのContainerロール',
+              cls: `bg-on-primary-container text-primary-container`
+            },
+            {
+              name: 'On Secondary',
+              token: 'on-secondary',
+              desc: 'On Secondary のbaseロール',
+              cls: `bg-on-secondary text-secondary`
+            },
+            {
+              name: 'On Secondary Container',
+              token: 'on-secondary-container',
+              desc: 'On Secondary のContainerロール',
+              cls: `bg-on-secondary-container text-secondary-container`
+            },
+            {
+              name: 'On Tertiary',
+              token: 'on-tertiary',
+              desc: 'On Tertiary のbaseロール',
+              cls: `bg-on-tertiary text-tertiary`
+            },
+            {
+              name: 'On Tertiary Container',
+              token: 'on-tertiary-container',
+              desc: 'On Tertiary のContainerロール',
+              cls: `bg-on-tertiary-container text-tertiary-container`
+            },
+            {
+              name: 'On Error',
+              token: 'on-error',
+              desc: 'On Error のbaseロール',
+              cls: `bg-on-error text-error`
+            },
+            {
+              name: 'On Error Container',
+              token: 'on-error-container',
+              desc: 'On Error のContainerロール',
+              cls: `bg-on-error-container text-error-container`
+            },
+            {
+              name: 'On Surface',
+              token: 'on-surface',
+              desc: 'On Surface のbaseロール',
+              cls: `bg-on-surface text-on-primary`
+            },
+            {
+              name: 'On Surface Variant',
+              token: 'on-surface-variant',
+              desc: 'On Surface のVariantロール',
+              cls: `bg-on-surface-variant text-on-primary`
+            },
+            {
+              name: 'On Inverse Surface',
+              token: 'on-inverse-surface',
+              desc: 'On Inverse Surfaceロール',
+              cls: `bg-on-inverse-surface text-inverse-surface`
+            },
+            {
+              name: 'On Background',
+              token: 'on-background',
+              desc: 'On Backgroundロール',
+              cls: `bg-on-background text-background`
+            },
+          ].map((v, idx) => (
+            <Fragment key={idx}>
+            { idx === 0 ? null : <div className="col-span-full border-b border-outline-variant"></div>}
+            <div className={`col-span-4 p-4 text-center ${v.cls} border border-outline-variant`}>{v.name}</div>
+            <div className="col-span-3">{v.token}</div>
+            <div className="col-span-5">{v.desc}</div>
+            </Fragment>
+          ))
+        }
+    </div>
+</div>
+
+
