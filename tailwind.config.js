@@ -114,6 +114,9 @@ module.exports = {
         'm': '24px',
         'l': '40px',
         'xl': '64px',
+      },
+      aspectRatio: {
+        '35mm': '3 / 2',
       }
     },
   },

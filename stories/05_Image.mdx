@@ -1,0 +1,90 @@
+import { Meta, Typeset, Unstyled } from '@storybook/blocks'
+import {noto_sans_jp} from '../lib/typography'
+
+<Meta title="スタイル/05. 画像" />
+<div className={`${noto_sans_jp.variable}`}><Unstyled><div className="font-sans text-on-surface">
+
+# 画像
+
+[デザインシステム｜デジタル庁](https://www.digital.go.jp/policies/servicedesign/designsystem/) を参考に、
+アプリで画像のアスペクト比を選びます。
+
+## アプリで画像のアスペクト比を選びます。
+
+動画やイメージ画像のアスペクト比は、`16:9`、
+写真や一部のスクリーンなどでは `3:2`の一般的なアスペクト比を使用、
+人物紹介等の画像比は1:1とします。
+
+バナーは国際標準バナーサイズであるハーフバナー(`234x60IMU`)の使用を推奨します。
+
+定期刊行物や文章など物理的な寸法が決まっている場合(A4サイズやB5サイズなど)は
+`16:9`や`1:1`に無理に当て込まず、プロダクトそのものの比率を尊重します。
+
+### 動画やイメージ画像の比率
+
+<div className="bg-surface-container aspect-video flex items-center justify-center h-64">
+<p className="text-9xl font-bold ">16:9</p>
+</div>
+
+### 写真や一部のスクリーンの比率
+
+<div className="bg-surface-container aspect-35mm flex items-center justify-center h-64">
+<p className="text-9xl font-bold ">3:2</p>
+</div>
+
+### 人物紹介等での比率
+
+<div className="bg-surface-container aspect-square flex items-center justify-center h-64">
+<p className="text-9xl font-bold ">1:1</p>
+</div>
+
+### 定期刊行物等
+
+<div className="flex gap-8 items-end">
+<div className="bg-surface-container aspect-[5/7] flex items-center justify-center h-64">
+<p className="text-4xl font-bold ">A4</p>
+</div>
+<div className="bg-surface-container aspect-[5/7] flex items-center justify-center h-[183px]">
+<p className="text-4xl font-bold ">A5</p>
+</div>
+<div className="bg-surface-container aspect-[5/7] flex items-center justify-center h-[131px]">
+<p className="text-4xl font-bold ">A6</p>
+</div>
+</div>
+
+### バナー
+
+<div className="bg-surface-container aspect-[234/60] flex items-center justify-center h-[60px]">
+<p className="text-xl font-bold ">234 x 60</p>
+</div>
+
+## 仕様
+
+### デザイントークン
+
+以下のトークンを[Tailwind CSS](https://tailwindcss.com/)のユーティリティクラスとして追加する。
+
+
+<div className="grid gap-4 grid-cols-12 bg-surface text-on-surface my-8 items-center p-4 rounded-md border border-outline-variant">
+    <div className="col-span-4 px-2 text-on-surface">分類</div>
+    <div className="col-span-4 px-2 text-on-surface">トークン</div>
+    <div className="col-span-4 px-2 text-on-surface">サイズ</div>
+    <hr className="col-span-12 border border-outline" />
+    <div className="col-span-4 py-2 px-2 text-on-surface">aspectRatio</div>
+    <div className="col-span-4 py-2 px-2 text-on-surface-variant">aspect-video <sup>※</sup></div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">16 / 9</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface">aspect-35mm</div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">3 / 2</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface-variant">aspect-square <sup>※</sup></div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">1 / 1</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+</div>
+
+<ul className="comment">
+<li>※ [Tailwind CSS](https://tailwindcss.com/)標準のユーティリティクラス</li>
+</ul>
+
+
+</div></Unstyled></div>
