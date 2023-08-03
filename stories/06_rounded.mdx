@@ -1,0 +1,74 @@
+import { Meta, Typeset, Unstyled } from '@storybook/blocks'
+import {noto_sans_jp} from '../lib/typography'
+
+<Meta title="スタイル/06. 角丸" />
+<div className={`${noto_sans_jp.variable}`}><Unstyled><div className="font-sans text-on-surface">
+
+# 角丸
+
+角丸は、ボタンやカードなど特定のコンポーネントに適用する事によって画面の中で視覚的な違いを生み出し、
+コンポーネントの理解や特定のコンテンツを認知させる事が出来ます。
+
+コンポーネントの短辺に合せて角丸を調整します。
+
+## 例
+
+<div className="flex gap-8 items-end">
+<div className="bg-surface-container aspect-[5/7] flex items-center justify-center h-[56px] rounded-md">
+<p className="text-xs font-bold ">md</p>
+</div>
+<div className="bg-surface-container aspect-[5/7] flex items-center justify-center h-[112px] rounded-xl">
+<p className="text-base font-bold ">xl</p>
+</div>
+<div className="bg-surface-container aspect-[5/7] flex items-center justify-center h-[168px] rounded-2xl">
+<p className="text-lg font-bold ">2xl</p>
+</div>
+<div className="bg-surface-container aspect-[5/7] flex items-center justify-center h-[220px] rounded-full">
+<p className="text-lg font-bold ">full</p>
+</div>
+</div>
+
+## 仕様
+
+### デザイントークン
+
+以下の[Tailwind CSS](https://tailwindcss.com/)標準ユーティリティクラスを、コンポーネントに応じて使い分けます。
+
+
+<div className="grid gap-4 grid-cols-12 bg-surface text-on-surface my-8 items-center p-4 rounded-md border border-outline-variant">
+    <div className="col-span-4 px-2 text-on-surface">分類</div>
+    <div className="col-span-4 px-2 text-on-surface">トークン</div>
+    <div className="col-span-4 px-2 text-on-surface">サイズ</div>
+    <hr className="col-span-12 border border-outline" />
+    <div className="col-span-4 py-2 px-2 text-on-surface">borderRadius</div>
+    <div className="col-span-4 py-2 px-2 text-on-surface-variant">rounded-sm <sup>※</sup></div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">2px</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface">rounded <sup>※</sup></div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">4px</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface-variant">rounded-md <sup>※</sup></div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">6px</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface-variant">rounded-lg <sup>※</sup></div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">8px</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface-variant">rounded-xl <sup>※</sup></div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">12px</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface-variant">rounded-2xl <sup>※</sup></div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">16px</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface-variant">rounded-3xl <sup>※</sup></div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">24px</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface-variant">rounded-full <sup>※</sup></div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">9999px</div>
+    <hr className="col-start-5 col-span-8 border border-outline" />
+</div>
+
+<ul className="comment">
+<li>※ [Tailwind CSS](https://tailwindcss.com/)標準のユーティリティクラス</li>
+</ul>
+
+</div></Unstyled></div>
