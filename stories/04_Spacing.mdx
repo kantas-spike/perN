@@ -93,24 +93,28 @@ import {noto_sans_jp} from '../lib/typography'
 
 以下のトークンを[Tailwind CSS](https://tailwindcss.com/)のユーティリティクラスとして追加する。
 
-<div className="grid gap-4 grid-cols-12 bg-surface text-on-surface my-8 items-center bg-surface p-4 rounded-md border border-outline-variant">
+<div className="grid gap-4 grid-cols-12 bg-surface text-on-surface my-8 items-center p-4 rounded-md border border-outline-variant">
     <div className="col-span-4 px-2 text-on-surface">分類</div>
     <div className="col-span-4 px-2 text-on-surface">トークン</div>
     <div className="col-span-4 px-2 text-on-surface">サイズ</div>
     <hr className="col-span-12 border border-outline" />
     <div className="col-span-4 py-2 px-2 text-on-surface">spacing</div>
-    <div className="col-span-4 py-2 px-2 text-on-surface">s</div>
+    <div className="col-span-4 py-2 px-2 text-on-surface">s <sup>※</sup></div>
     <div className="col-span-4 py-2 px-2 text-on-surface">16px</div>
     <hr className="col-start-5 col-span-8 border border-outline" />
-    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface">m</div>
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface">m <sup>※</sup></div>
     <div className="col-span-4 py-2 px-2 text-on-surface">24px</div>
     <hr className="col-start-5 col-span-8 border border-outline" />
-    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface">l</div>
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface">l <sup>※</sup></div>
     <div className="col-span-4 py-2 px-2 text-on-surface">40px</div>
     <hr className="col-start-5 col-span-8 border border-outline" />
-    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface">xl</div>
+    <div className="col-start-5 col-span-4 py-2 px-2 text-on-surface">xl <sup>※</sup></div>
     <div className="col-span-4 py-2 px-2 text-on-surface">64px</div>
     <hr className="col-span-full border border-outline" />
 </div>
+
+<ul className="comment">
+    <li>※ &nbsp; `padding(p)`、 `margin(m)`、 `width(w)`、 `height(h)`、 `maxHeight(max-h)`、 `gap`、 `inset`、 `space`、 `translate`、 `scrollMargin(scroll-m)`、 `scrollPadding(scroll-p)`で本トークンを利用可能</li>
+</ul>
 
 </div></Unstyled></div>
