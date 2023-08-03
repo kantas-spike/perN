@@ -116,6 +116,22 @@ body {
     @apply txt-body-l max-w-[40rem] my-s;
   }
 
+  ul {
+    @apply list-outside list-disc pl-6 max-w-[40rem];
+
+    li {
+        @apply my-2;
+    }
+}
+
+  ul.comment {
+    @apply list-outside list-none;
+
+    li {
+        @apply txt-comment-l -indent-3;
+    }
+  }
+
   /* lg: */
   @media (min-width: 768px) {
     h1 {
@@ -137,6 +153,6 @@ body {
     h5 {
       @apply hl-xxs mt-m mb-s;
     }
-}
+  }
 
 }
