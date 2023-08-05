@@ -1,3 +1,5 @@
+import remarkGfm from 'remark-gfm';
+
 /** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
   stories: [
@@ -15,6 +17,16 @@ const config = {
         postCss: true,
       }
     },
+    {
+      name: "@storybook/addon-docs",
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          }
+        }
+      }
+    }
   ],
   framework: {
     name: "@storybook/nextjs",
