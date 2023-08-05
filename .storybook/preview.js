@@ -1,5 +1,6 @@
 import '../app/globals.css'
 import '../stories/storybook-docs.css'
+import {noto_sans_jp} from '../lib/typography'
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
@@ -12,6 +13,13 @@ const preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div className={noto_sans_jp.variable}>
+        <Story />
+      </div>
+    )
+  ]
 };
 
 export default preview;
