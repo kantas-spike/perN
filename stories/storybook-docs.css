@@ -1,3 +1,13 @@
 #storybook-docs {
+    table {
+        @apply bg-surface;
 
+        th, td {
+            @apply border border-outline-variant p-2;
+        }
+
+        th {
+            @apply bg-surface-dim text-on-surface;
+        }
+    }
 }
