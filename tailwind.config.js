@@ -1,4 +1,4 @@
-const { tones } = require('./lib/color_system')
+const { key_colors, tones } = require('./lib/color_system')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
@@ -35,6 +35,12 @@ module.exports = {
         error: {
           DEFAULT: tones.E_40,
           container: tones.E_90,
+        },
+        focused: {
+          DEFAULT: key_colors.focused.hex(),
+        },
+        disabled: {
+          DEFAULT: tones.D_40,
         },
         surface: {
           dim: tones.N_87,
@@ -85,6 +91,9 @@ module.exports = {
             DEFAULT: tones.E_100,
             container: tones.E_10,
           },
+          disabled: {
+            DEFAULT: tones.D_94,
+          },
           surface: {
             DEFAULT: tones.N_10,
             variant: tones.NV_30,
@@ -94,7 +103,7 @@ module.exports = {
           },
           background: {
             DEFAULT: tones.N_10,
-          }
+          },
         }
       },
       fontFamily: {

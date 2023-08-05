@@ -82,17 +82,63 @@ Accent colors以外に、アプリに追加したい色です。
 
   エラーを表現するために使う色です。
 
+- Focused colors
+
+  コンポーネントが選択された事を表現する色です。<sup>※</sup>
+
+- Disabled colors
+
+  コンポーネントが無効である事を表現する色です。<sup>※</sup>
+
+
+<ul class="comment">
+<li>※ [デザインシステム｜デジタル庁](https://www.digital.go.jp/policies/servicedesign/designsystem/) を参考</li>
+</ul>
 ### 色選び
+
+#### Error colors
 
 適当に赤系の色を選びます。
 
 <div className="border-2 rounded-md m-4 p-4">
   <ColorPalette>
     <ColorItem
-      title="Additional colors"
+      title="Error colors"
       subtitle=""
       colors={{
         "Error": key_colors.error.hex(),
+      }}
+    />
+  </ColorPalette>
+</div>
+
+#### Focused colors
+
+オレンジ系の色を選びます。
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="Focused colors"
+      subtitle=""
+      colors={{
+        "Focused": key_colors.focused.hex(),
+      }}
+    />
+  </ColorPalette>
+</div>
+
+#### Disabled colors
+
+グレー系の色を選びます。
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="Disabled colors"
+      subtitle=""
+      colors={{
+        "Disabled": key_colors.disabled.hex(),
       }}
     />
   </ColorPalette>
@@ -233,6 +279,8 @@ Accent colors毎に、個別のプレフィックスを決め、`プレフィッ
 
 ### Additional colors
 
+#### エラー
+
 13段階(輝度0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100)のパレットを用意します。
 
 Additional colors毎に、個別のプレフィックスを決め、`プレフィックス+輝度`でパレットの色を指定します。
@@ -245,21 +293,42 @@ Additional colors毎に、個別のプレフィックスを決め、`プレフ�
   />
 </ColorPalette>
 
+#### Focused
+
+キーカラーのみ利用するため、パレットはありません。
+
+#### Disabled
+
+101段階(輝度0〜100)のパレットを用意します。
+
+Disabled colors毎に、個別のプレフィックスを決め、`プレフィックス+輝度`でパレットの色を指定します。
+
+<div className="border-2 rounded-md m-4 p-4">
+  <ColorPalette>
+    <ColorItem
+      title="Disabled Color"
+      subtitle="prefix: 'D-'"
+      colors={{ "Disabled Color": `linear-gradient(to right, ${key_colors.disabled.set('hsl.l', 0).hex()}, ${key_colors.disabled.hex()}, ${key_colors.disabled.set('hsl.l', 1).hex()})` }}
+    />
+  </ColorPalette>
+</div>
+
+
 #### 使用例
 
 <div className="border-2 rounded-md m-4 p-4">
   <div className="flex gap-4 h-32 justify-stretch">
-    <div className="border flex bg-tones-E_40 text-white font-bold items-center justify-center grow">
-      <div>E-40</div>
+    <div className="border flex bg-tones-D_98 text-black font-bold items-center justify-center grow">
+      <div>D-98</div>
     </div>
-    <div className="border flex bg-tones-E_100 text-black font-bold items-center justify-center grow">
-      <div>E-100</div>
+    <div className="border flex bg-tones-D_10 text-white font-bold items-center justify-center grow">
+      <div>D-10</div>
     </div>
-    <div className="border flex bg-tones-E_90 text-black font-bold items-center justify-center grow">
-      <div>E-90</div>
+    <div className="border flex bg-tones-D_94 text-black font-bold items-center justify-center grow">
+      <div>D-94</div>
     </div>
-    <div className="border flex bg-tones-E_10 text-white font-bold items-center justify-center grow">
-      <div>E-10</div>
+    <div className="border flex bg-tones-D_40 text-white font-bold items-center justify-center grow">
+      <div>D-40</div>
     </div>
   </div>
 </div>
@@ -570,6 +639,9 @@ Additional colors毎に、個別のプレフィックスを決め、`プレフ�
 - Shadow: 影の色
 - Surface tint: [Material Design 3](https://m3.material.io/styles/elevation/applying-elevation)において要素の高度応じて重ねあわせて表示する基本色
 - Scrim: モーダル画面の画面の外側の色
+- Focuced: コンポーネントが選択された事を表現する色
+- Disabled: コンポーネントが無効である事を表現する色
+- On Disabled: 無効色に配置するテキストやアイコンの色
 
 <div className="border-2 rounded-md m-4 p-4">
 <ColorPalette>
@@ -600,6 +672,27 @@ Additional colors毎に、個別のプレフィックスを決め、`プレフ�
     subtitle=""
     colors={{
       "Scripm(N-0)": fullConfig.theme.colors.scrim.DEFAULT,
+    }}
+  />
+  <ColorItem
+    title="Focused"
+    subtitle=""
+    colors={{
+      "Focused": key_colors.focused.hex(),
+    }}
+  />
+  <ColorItem
+    title="Disabled"
+    subtitle=""
+    colors={{
+      "Disabled(D-40)": fullConfig.theme.colors.disabled.DEFAULT,
+    }}
+  />
+  <ColorItem
+    title="On Disabled"
+    subtitle=""
+    colors={{
+      "Disabled(D-94)": fullConfig.theme.colors.on.disabled.DEFAULT,
     }}
   />
 </ColorPalette>
@@ -875,6 +968,24 @@ Additional colors毎に、個別のプレフィックスを決め、`プレフ�
               token: 'on-background',
               desc: 'On Backgroundロール',
               cls: `bg-on-background text-background`
+            },
+            {
+              name: 'Focused',
+              token: 'focused',
+              desc: 'Focusedロール',
+              cls: `bg-focused text-white`
+            },
+            {
+              name: 'Disabled',
+              token: 'disabled',
+              desc: 'Disabledロール',
+              cls: `bg-disabled text-on-disabled`
+            },
+            {
+              name: 'On Disabled',
+              token: 'on-disabled',
+              desc: 'On Disabledロール',
+              cls: `bg-on-disabled text-disabled`
             },
           ].map((v, idx) => (
             <Fragment key={idx}>
