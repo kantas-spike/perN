@@ -1,0 +1,206 @@
+import { Meta, Story, Unstyled } from "@storybook/blocks";
+import { noto_sans_jp } from "../lib/typography";
+import Button from "../components/button";
+import * as ButtonsStories from "./Buttons.stories";
+
+<Meta of={ButtonsStories} />
+
+<div className={`${noto_sans_jp.variable}`}>
+<Unstyled>
+<div className='font-sans text-on-surface'>
+
+# ボタン
+
+## 標準コンポーネント
+
+<div className="grid grid-cols-3 items-center justify-center gap-4 rounded-md border border-outline bg-surface p-4 text-on-surface">
+  <div className="text-center">プライマリボタン</div>
+  <div>
+    <p>プライマリボタンは、ページ内で最も重要なアクション事に使用します。</p>
+    <p>例: 同意、送信、応募</p>
+  </div>
+  <div className="m-4">
+    <Story of={ButtonsStories.Primary} />
+  </div>
+  <hr className="col-span-full border border-outline-variant" />
+  <div className="text-center">セカンダリボタン</div>
+  <div>
+    <p>プライマリボタンに比べて優先度が下がるアクションに対して使用します。</p>
+    <p>例: 問い合わせ</p>
+  </div>
+  <div className="m-4">
+    <Story of={ButtonsStories.Secondary} />
+  </div>
+  <hr className="col-span-full border border-outline-variant" />
+  <div className="text-center">ターシャリボタン</div>
+  <div>
+    <p>
+      プライマリボタンおよびセカンダリボタンに比べて優先度が低い3つ目のアクションに対して使用します。
+    </p>
+    <p>例: キャンセル</p>
+  </div>
+  <div className="m-4">
+    <Story of={ButtonsStories.Tertiary} />
+  </div>
+</div>
+
+## 標準コンポーネントと状態
+
+<div className="grid grid-cols-10 items-center justify-center gap-4 rounded-md border border-outline bg-surface p-4 text-on-surface">
+  <div className="col-span-3 col-start-2 text-center ">Primary</div>
+  <div className="col-span-3 text-center">Secondary</div>
+  <div className="col-span-3 text-center ">Tertiary</div>
+  <hr className="col-span-9 col-start-2  border border-outline-variant" />
+  <div className="text-center">Normal</div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.Primary} />
+  </div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.Secondary} />
+  </div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.Tertiary} />
+  </div>
+  <hr className="col-span-9 col-start-2  border border-outline-variant" />
+  <div className="text-center">Hover</div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.PrimaryWithHover} />
+  </div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.SecondaryWithHover} />
+  </div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.TertiaryWithHover} />
+  </div>
+  <hr className="col-span-9 col-start-2  border border-outline-variant" />
+  <div className="text-center">Active</div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.PrimaryWithActive} />
+  </div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.SecondaryWithActive} />
+  </div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.TertiaryWithActive} />
+  </div>
+  <hr className="col-span-9 col-start-2  border border-outline-variant" />
+  <div className="text-center">Focuced</div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.PrimaryWithFocus} />
+  </div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.SecondaryWithFocus} />
+  </div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.TertiaryWithFocus} />
+  </div>
+  <hr className="col-span-9 col-start-2  border border-outline-variant" />
+  <div className="text-center">Disabled</div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.PrimaryDisabled} />
+  </div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.SecondaryDisabled} />
+  </div>
+  <div className="col-span-3">
+    <Story of={ButtonsStories.TertiaryDisabled} />
+  </div>
+  <hr className="col-span-9 col-start-2  border border-outline-variant" />
+</div>
+
+## マージン
+
+| 余白  | 説明                                            |
+| ----- | ----------------------------------------------- |
+| `p-s` | ボタンには縦・横 それぞれ16pxのパディングを設定 |
+
+## ターゲット領域
+
+ターゲットは、指のタッチやマウスのようなポインティングデバイスによるポイントアクションを受け入れる領域を指します。
+
+## ボタン幅
+
+ボタンの幅は、スマートフォンの場合は、上記のコンテンツと等倍とし、
+タブレット以降はフォームに付随するボタンの場合はフォーム幅と等倍とします。
+
+| 指定方法                      | 説明                                               |
+| ----------------------------- | -------------------------------------------------- |
+| `className`に幅のクラスを指定 | `<Button className="col-span-full" />`のように設定 |
+
+### スマートフォン
+
+<div className="container mx-auto max-w-screen-sm rounded-md border-2 border-outline bg-surface text-on-surface">
+  <div className="mx-4 my-4 grid grid-cols-12 gap-4">
+    <div className="col-span-2">トップ/詳細/フォーム</div>
+    <div className="txt-button col-span-full flex h-20 items-center justify-center bg-surface-container-high p-4">
+      1分の1
+    </div>
+    <Button label="ボタン" className="col-span-full" />
+  </div>
+</div>
+
+### タブレット
+
+<div className="container mx-auto max-w-screen-md rounded-md border-2 border-outline bg-surface text-on-surface">
+  <div className="mx-10 my-4 grid grid-cols-12 gap-6">
+    <div className="col-span-2">トップ/詳細</div>
+    <div className="txt-button col-span-full flex h-20 items-center justify-center bg-surface-container-high p-4">
+      1分の1
+    </div>
+    <div className="txt-button col-span-6 flex  h-20 items-center justify-center bg-surface-container-high p-4">
+      2分の1
+    </div>
+    <div className="txt-button col-span-6 flex  h-20 items-center justify-center bg-surface-container-high p-4">
+      2分の1
+    </div>
+    <Button label="フォーム以外のボタン" className="col-span-6" />
+    <div className="col-span-2 col-start-1">フォーム</div>
+    <div className="txt-button col-span-full flex  h-20 items-center justify-center bg-surface-container-high p-4">
+      1分の1
+    </div>
+    <Button label="フォームのボタン" className="col-span-full" />
+  </div>
+</div>
+
+### デスクトップ
+
+<div className="container mx-auto border-2 border-outline rounded-md max-w-screen-lg text-on-surface bg-surface">
+    <div className="mx-12 my-4 grid grid-cols-12 gap-4">
+        <div className="col-span-full">トップ</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-6 text-center txt-button">4分の2</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <Button label="フォーム以外のボタン" className="col-span-3" />
+
+        <div className="col-span-full">詳細</div>
+        <div className="bg-surface-container-high p-4 col-span-9 text-center txt-button">4分の3</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-3 text-center txt-button">4分の1</div>
+        <Button label="フォーム以外のボタン" type="secondary" className="col-span-3" />
+
+        <div className="col-span-full">フォーム</div>
+        <div className="bg-surface-container-high p-4 col-span-9 text-center txt-button flex h-20 items-center justify-center">4分の3</div>
+        <Button label="フォームのボタン" className="col-span-9" />
+
+
+        <div className="col-span-full">その他</div>
+        <div className="bg-surface-container-high p-4 col-span-4 text-center txt-button">3分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-4 text-center txt-button">3分の1</div>
+        <div className="bg-surface-container-high p-4 col-span-4 text-center txt-button">3分の1</div>
+        <Button label="フォーム以外のボタン" type="tertiary" className="col-span-4" />
+    </div>
+
+</div>
+
+</div>
+</Unstyled>
+</div>
