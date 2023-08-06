@@ -1,0 +1,78 @@
+import { Meta, Story, Unstyled } from '@storybook/blocks'
+import {noto_sans_jp} from '../lib/typography'
+import * as LinkStories from './Link.stories';
+import Link from '../components/link'
+
+<Meta of={LinkStories} />
+
+<div className={`${noto_sans_jp.variable}`}>
+<Unstyled>
+<div className='font-sans text-on-surface'>
+# リンクテキスト
+
+自サイトへのリンクと、外部サイトへのリンクの違いがわかるようするため、
+外部サイトのリンクの末尾にアイコンをつけて、その旨を喚起します。
+
+また、外部サイトへの遷移となる外部リンクは、原則として新規ウィンドウで開きます。
+
+<div className="p-4 grid grid-cols-2 gap-5 bg-surface border border-outline rounded-md justify-center items-center">
+<div className="">自サイトへのリンク</div>
+<div className="">外部サイトへのリンク</div>
+<hr className="border border-outline-variant col-span-full" />
+<div className=""><Story of={LinkStories.Internal} /></div>
+<div className=""><Story of={LinkStories.External} /></div>
+</div>
+
+## 状態別リンクテキスト
+
+<div className="p-4 grid grid-cols-5 gap-5 bg-surface border border-outline rounded-md justify-center items-center">
+<div className=""></div>
+<div className="col-span-2">自サイトへのリンク</div>
+<div className="col-span-2">外部サイトへのリンク</div>
+<hr className="border border-outline-variant col-span-full" />
+<div className="">Normal</div>
+<div className="col-span-2"><Story of={LinkStories.Internal} /></div>
+<div className="col-span-2"><Story of={LinkStories.External} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div>Focused</div>
+<div className="col-span-2"><Story of={LinkStories.InternalWithFocused} /></div>
+<div className="col-span-2"><Story of={LinkStories.ExternalWithFocused} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div>Hover</div>
+<div className="col-span-2"><Story of={LinkStories.InternalWithHover} /></div>
+<div className="col-span-2"><Story of={LinkStories.ExternalWithHover} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div>Active</div>
+<div className="col-span-2"><Story of={LinkStories.InternalWithActive} /></div>
+<div className="col-span-2"><Story of={LinkStories.ExternalWithActive} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div>Visited</div>
+<div className="col-span-2"><Story of={LinkStories.InternalWithVisited} /></div>
+<div className="col-span-2"><Story of={LinkStories.ExternalWithVisited} /></div>
+</div>
+
+
+## 文中での利用例
+
+<div className="p-4 grid grid-cols-5 gap-2 bg-surface border border-outline rounded-md justify-center items-center">
+<div className=""></div>
+<div className="col-span-2">自サイトへのリンク</div>
+<div className="col-span-2">外部サイトへのリンク</div>
+<hr className="border border-outline-variant col-span-full" />
+<div className="">本文L</div>
+<div className="col-span-2"><Story of={LinkStories.InternalBodyL} /></div>
+<div className="col-span-2"><Story of={LinkStories.ExternalBodyL} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div>本文M</div>
+<div className="col-span-2"><Story of={LinkStories.InternalBodyM} /></div>
+<div className="col-span-2"><Story of={LinkStories.ExternalBodyM} /></div>
+
+</div>
+
+</div>
+</Unstyled>
+</div>
+
+
+
+
