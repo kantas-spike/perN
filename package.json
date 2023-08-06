@@ -31,6 +31,7 @@
     "@storybook/nextjs": "^7.1.1",
     "@storybook/react": "^7.1.1",
     "@storybook/testing-library": "^0.2.0",
+    "@svgr/cli": "^8.0.1",
     "eslint-plugin-storybook": "^0.6.13",
     "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
