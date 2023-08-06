@@ -6,6 +6,9 @@ import {noto_sans_jp} from '../lib/typography'
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
+    backgrounds: {
+      default: "light",
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
