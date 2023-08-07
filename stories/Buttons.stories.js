@@ -3,6 +3,40 @@ import Button from "../components/button";
 export default {
   title: "コンポーネント/01. ボタン",
   component: Button,
+  argTypes: {
+    label: {
+      control: 'text',
+      description: 'ボタンのラベル',
+    },
+    className: {
+      control: 'text',
+      description: 'ボタンに設定する追加のCSSクラス名',
+      table: {
+        type: {
+          summary: 'string'
+        }
+      },
+    },
+    type: {
+      control: 'radio',
+      options: ['primary', 'secondary', 'tertiary'],
+      description: 'ボタンの種類',
+      table: {
+        type: {
+          summary: 'enum'
+        }
+      },
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'ボタンの無効化の有無',
+      table: {
+        type: {
+          summary: 'boolean'
+        }
+      },
+    }
+  }
 };
 
 const render_button = ({...args}) => <Button {...args} />

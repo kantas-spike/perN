@@ -3,6 +3,29 @@ import Link from "../components/link";
 export default {
   title: "コンポーネント/02. リンクテキスト",
   component: Link,
+  argTypes: {
+    href: {
+      control: {
+        type: 'text'
+      },
+      description: 'リンクテキストのURL',
+    },
+    children: {
+      control: {
+        type: 'text'
+      },
+      description: 'リンクテキストのラベル',
+    },
+    isExternal: {
+      type: 'boolean',
+      table: {
+        type: {
+          summary: 'boolean'
+        }
+      },
+      description: '外部サイトのURLであるかの当否',
+    }
+  }
 };
 
 const url_suffix = Date.now();

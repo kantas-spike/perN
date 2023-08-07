@@ -1,4 +1,4 @@
-import { Meta, Story, Unstyled } from '@storybook/blocks'
+import { Meta, Story, Unstyled, Canvas, Controls } from '@storybook/blocks'
 import {noto_sans_jp} from '../lib/typography'
 import * as LinkStories from './Link.stories';
 import Link from '../components/link'
@@ -15,13 +15,11 @@ import Link from '../components/link'
 
 また、外部サイトへの遷移となる外部リンクは、原則として新規ウィンドウで開きます。
 
-<div className="p-4 grid grid-cols-2 gap-5 bg-surface border border-outline rounded-md justify-center items-center">
-<div className="">自サイトへのリンク</div>
-<div className="">外部サイトへのリンク</div>
-<hr className="border border-outline-variant col-span-full" />
-<div className=""><Story of={LinkStories.Internal} /></div>
-<div className=""><Story of={LinkStories.External} /></div>
-</div>
+## 仕様
+
+<Canvas of={LinkStories.Internal} sourceState="shown" />
+
+<Controls of={LinkStories.Internal} />
 
 ## 状態別リンクテキスト
 

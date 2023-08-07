@@ -1,4 +1,4 @@
-import { Meta, Story, Unstyled } from "@storybook/blocks";
+import { Meta, Story, Unstyled, ArgTypes, Canvas, Controls } from "@storybook/blocks";
 import { noto_sans_jp } from "../lib/typography";
 import Button from "../components/button";
 import * as ButtonsStories from "./Buttons.stories";
@@ -10,6 +10,12 @@ import * as ButtonsStories from "./Buttons.stories";
 <div className='font-sans text-on-surface'>
 
 # ボタン
+
+## 仕様
+
+<Canvas of={ButtonsStories.Primary} sourceState="shown" />
+
+<Controls of={ButtonsStories.Primary} />
 
 ## 標準コンポーネント
 
