@@ -69,7 +69,7 @@ export const Focused = {
     },
     parameters: {
         pseudo: {
-          focus: ["input"],
+          focus: ["div.Focused input"],
         }
     }
 }
@@ -93,7 +93,7 @@ export const Error = {
         fieldSize: 10,
         errorMessage: "登録済みのユーザー名です。別のユーザー名を入力して下さい。",
         initialValue: "バッドユーザー",
-   }
+    }
 }
 
 export const Disabled = {

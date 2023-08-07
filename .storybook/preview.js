@@ -17,8 +17,8 @@ const preview = {
     },
   },
   decorators: [
-    (Story) => (
-      <div className={noto_sans_jp.variable}>
+    (Story, context) => (
+      <div className={`${noto_sans_jp.variable} ${context.name}`}>
         <Story />
       </div>
     )
