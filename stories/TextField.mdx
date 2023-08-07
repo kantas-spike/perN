@@ -1,0 +1,45 @@
+import { Meta, Story, Unstyled, ArgTypes, Canvas, Controls } from "@storybook/blocks";
+import {noto_sans_jp} from '../lib/typography'
+import * as TextFieldStories from './TextField.stories'
+
+<Meta of={TextFieldStories} />
+
+<div className={`${noto_sans_jp.variable}`}>
+<Unstyled>
+<div className='font-sans text-on-surface'>
+
+# テキスト入力
+
+テキスト入力コンポーネントは、名前や電話番号など、1行以内のテキストを入力する場合に使用します。
+
+## 仕様
+
+<Canvas of={TextFieldStories.Default} sourceState="shown" />
+
+<Controls of={TextFieldStories.Default} />
+
+## 状態別テキスト入力
+
+<div className="p-4 grid grid-cols-3 gap-5 bg-surface border border-outline rounded-md justify-center items-center">
+<div className="text-bold">状態</div>
+<div className="text-bold col-span-2">テキスト入力の例</div>
+<hr className="border border-outline-variant col-span-full" />
+<div>Default</div>
+<div className="col-span-2"><Story of={TextFieldStories.Default} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div>Focused</div>
+<div className="col-span-2"><Story of={TextFieldStories.Focused} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div>Filled</div>
+<div className="col-span-2"><Story of={TextFieldStories.Filled} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div>Error</div>
+<div className="col-span-2"><Story of={TextFieldStories.Error} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div>Disabled</div>
+<div className="col-span-2"><Story of={TextFieldStories.Disabled} /></div>
+</div>
+
+</div>
+</Unstyled>
+</div>
