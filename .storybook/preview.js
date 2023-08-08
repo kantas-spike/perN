@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   console.log(`DOMContentLoaded: adding class('${noto_sans_jp.variable}') to #storybook-docs`)
   const root = document.getElementById("storybook-docs")
   root.classList.add(noto_sans_jp.variable)
+  // addon表示がされない場合があるため念の為クリア
+  localStorage.clear()
 }, {once: true})
 
 /** @type { import('@storybook/react').Preview } */
