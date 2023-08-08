@@ -2,6 +2,13 @@ import '../app/globals.css'
 import '../stories/storybook-docs.css'
 import {noto_sans_jp} from '../lib/typography'
 
+// console.log("document.readyState: ", document.readyState)
+document.addEventListener("DOMContentLoaded", (event) => {
+  console.log(`DOMContentLoaded: adding class('${noto_sans_jp.variable}') to #storybook-docs`)
+  const root = document.getElementById("storybook-docs")
+  root.classList.add(noto_sans_jp.variable)
+}, {once: true})
+
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {
@@ -18,7 +25,7 @@ const preview = {
   },
   decorators: [
     (Story, context) => (
-      <div className={`${noto_sans_jp.variable} ${context.name}`}>
+      <div className={`${context.name}`}>
         <Story />
       </div>
     )
