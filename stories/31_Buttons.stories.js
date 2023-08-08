@@ -35,6 +35,10 @@ export default {
           summary: 'boolean'
         }
       },
+    },
+    onClick: {
+      action: 'clicked',
+      description: 'ボタンクリック時のイベントハンドラー',
     }
   }
 };

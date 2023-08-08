@@ -1,4 +1,10 @@
-export default function Button({ label, className, type = "primary", disabled = false }) {
+export default function Button({
+  label,
+  className,
+  type = "primary",
+  disabled = false,
+  onClick,
+}) {
   const common_classes = [
     "txt-button",
     "block",
@@ -77,7 +83,11 @@ export default function Button({ label, className, type = "primary", disabled = 
       break;
   }
   return (
-    <button className={target_classes.join(" ") + ` ${className}`} disabled={disabled}>
+    <button
+      className={target_classes.join(" ") + ` ${className}`}
+      disabled={disabled}
+      onClick={onClick}
+    >
       {label}
     </button>
   );
