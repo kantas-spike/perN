@@ -1,16 +1,27 @@
 import { Meta, Story, Unstyled, ArgTypes, Canvas, Controls } from "@storybook/blocks";
-import {noto_sans_jp} from '../lib/typography'
 import * as TextFieldStories from './33_TextField.stories'
 
 <Meta of={TextFieldStories} />
 
-<div className={`${noto_sans_jp.variable}`}>
 <Unstyled>
 <div className='font-sans text-on-surface'>
 
 # テキスト入力
 
 テキスト入力コンポーネントは、名前や電話番号など、1行以内のテキストを入力する場合に使用します。
+
+## ガイドライン
+
+### 設計の原則
+
+- コンテナーの横幅は、言葉の長さに合わせて調整してください。
+入力すべきものをより直感的にわかりやすくできます。
+
+- ラベルテキストは入力項目を端的に表現してください。
+  入力項目が1つしかなく、その意味を画面タイトルなどで明確に説明できる場合は省略可能です。
+
+- サポートテキストは入力例や入力に必要な説明を記入することで利用者の入力を補助できます。
+
 
 ## 仕様
 
@@ -42,4 +53,3 @@ import * as TextFieldStories from './33_TextField.stories'
 
 </div>
 </Unstyled>
-</div>

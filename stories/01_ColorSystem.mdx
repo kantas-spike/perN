@@ -1,17 +1,17 @@
 {/* Colors.mdx */}
 
 import { Fragment } from 'react'
-import { Meta, ColorPalette, ColorItem, Unstyled } from '@storybook/blocks';
+import { Meta, ColorPalette, ColorItem, Unstyled, Preview } from '@storybook/blocks';
 import  { key_colors, create_tones_of_accent_colors, create_tones_of_neutral_colors } from '../lib/color_system'
-import {noto_sans_jp} from '../lib/typography'
 
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../tailwind.config.js'
 
 export const fullConfig = resolveConfig(tailwindConfig)
 
+
 <Meta title="スタイル/01. カラー" />
-<div className={`${noto_sans_jp.variable}`}><Unstyled><div className="font-sans text-on-surface">
+<Unstyled><div className="font-sans text-on-surface">
 
 # Color System
 
@@ -999,4 +999,4 @@ Disabled colors毎に、個別のプレフィックスを決め、`プレフィ�
     </div>
 </div>
 
-</div></Unstyled></div>
+</div></Unstyled>

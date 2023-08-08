@@ -1,11 +1,9 @@
 import { Meta, Story, Unstyled, ArgTypes, Canvas, Controls } from "@storybook/blocks";
-import { noto_sans_jp } from "../lib/typography";
 import Button from "../components/button";
 import * as ButtonsStories from "./31_Buttons.stories";
 
 <Meta of={ButtonsStories} />
 
-<div className={`${noto_sans_jp.variable}`}>
 <Unstyled>
 <div className='font-sans text-on-surface'>
 
@@ -40,9 +38,7 @@ import * as ButtonsStories from "./31_Buttons.stories";
   <hr className="col-span-full border border-outline-variant" />
   <div className="text-center">ターシャリボタン</div>
   <div>
-    <p>
-      プライマリボタンおよびセカンダリボタンに比べて優先度が低い3つ目のアクションに対して使用します。
-    </p>
+    <p>プライマリボタンおよびセカンダリボタンに比べて優先度が低い3つ目のアクションに対して使用します。</p>
     <p>例: キャンセル</p>
   </div>
   <div className="m-4">
@@ -138,9 +134,7 @@ import * as ButtonsStories from "./31_Buttons.stories";
 <div className="container mx-auto max-w-screen-sm rounded-md border-2 border-outline bg-surface text-on-surface">
   <div className="mx-4 my-4 grid grid-cols-12 gap-4">
     <div className="col-span-2">トップ/詳細/フォーム</div>
-    <div className="txt-button col-span-full flex h-20 items-center justify-center bg-surface-container-high p-4">
-      1分の1
-    </div>
+    <div className="txt-button col-span-full flex h-20 items-center justify-center bg-surface-container-high p-4">1分の1</div>
     <Button label="ボタン" className="col-span-full" />
   </div>
 </div>
@@ -150,20 +144,12 @@ import * as ButtonsStories from "./31_Buttons.stories";
 <div className="container mx-auto max-w-screen-md rounded-md border-2 border-outline bg-surface text-on-surface">
   <div className="mx-10 my-4 grid grid-cols-12 gap-6">
     <div className="col-span-2">トップ/詳細</div>
-    <div className="txt-button col-span-full flex h-20 items-center justify-center bg-surface-container-high p-4">
-      1分の1
-    </div>
-    <div className="txt-button col-span-6 flex  h-20 items-center justify-center bg-surface-container-high p-4">
-      2分の1
-    </div>
-    <div className="txt-button col-span-6 flex  h-20 items-center justify-center bg-surface-container-high p-4">
-      2分の1
-    </div>
+    <div className="txt-button col-span-full flex h-20 items-center justify-center bg-surface-container-high p-4">1分の1</div>
+    <div className="txt-button col-span-6 flex  h-20 items-center justify-center bg-surface-container-high p-4">2分の1</div>
+    <div className="txt-button col-span-6 flex  h-20 items-center justify-center bg-surface-container-high p-4">2分の1</div>
     <Button label="フォーム以外のボタン" className="col-span-6" />
     <div className="col-span-2 col-start-1">フォーム</div>
-    <div className="txt-button col-span-full flex  h-20 items-center justify-center bg-surface-container-high p-4">
-      1分の1
-    </div>
+    <div className="txt-button col-span-full flex  h-20 items-center justify-center bg-surface-container-high p-4">1分の1</div>
     <Button label="フォームのボタン" className="col-span-full" />
   </div>
 </div>
@@ -209,4 +195,3 @@ import * as ButtonsStories from "./31_Buttons.stories";
 
 </div>
 </Unstyled>
-</div>

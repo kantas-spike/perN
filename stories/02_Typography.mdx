@@ -2,7 +2,7 @@ import { Meta, Typeset, Unstyled } from '@storybook/blocks'
 import {noto_sans_jp} from '../lib/typography'
 
 <Meta title="スタイル/02. タイポグラフィ" />
-<div className={`${noto_sans_jp.variable}`}><Unstyled><div className="font-sans text-on-surface">
+<Unstyled><div className="font-sans text-on-surface">
 
 # タイポグラフィ
 
@@ -517,9 +517,7 @@ import {noto_sans_jp} from '../lib/typography'
 ウェイトを変更せずに境界線を追加する、いわゆる疑似ボールドは使用しないでください。
 
 ~~~html
-<p>
-    本文中の<span className="font-bold">特定の箇所</span>だけ強調して示す。
-</p>
+<p>本文中の<span className="font-bold">特定の箇所</span>だけ強調して示す。</p>
 ~~~
 
 ## テキスト装飾
@@ -532,8 +530,8 @@ import {noto_sans_jp} from '../lib/typography'
 <div className="text-on-surface bg-surface border border-outline rounded-md p-4 my-4 font-sans">
 <div className="mb-6 text-xl trackgin-m line-through">2021年8月25日</div>
 <p>
-文章中に打ち消し線を使用する場合は、<span className="line-through">2021年8月25日</span>の様に該当箇所に線を引きます。
-既に終了しているイベントの日付等に使用してください。
+<span>文章中に打ち消し線を使用する場合は、<span className="line-through">2021年8月25日</span>の様に該当箇所に線を引きます。
+既に終了しているイベントの日付等に使用してください。</span>
 </p>
 </div>
 
@@ -696,4 +694,4 @@ import {noto_sans_jp} from '../lib/typography'
     </div>
 </div>
 
-</div></Unstyled></div>
+</div></Unstyled>
