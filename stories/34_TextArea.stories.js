@@ -72,7 +72,104 @@ export const Default = {
         label: "商品についての補足情報",
         isRequired: true,
         description: "サイト・店舗名、購入有無、感想などを記入してください",
+        maxlength: 100,
+    },
+    render: useStateWrapper,
+}
+
+export const Focused = {
+    args: {
+        label: "商品についての補足情報",
+        isRequired: true,
+        description: "サイト・店舗名、購入有無、感想などを記入してください",
+        maxlength: 100,
+    },
+    render: useStateWrapper,
+    parameters: {
+        pseudo: {
+            focus: ".Focused textarea",
+        }
+    }
+}
+
+export const Filled = {
+    args: {
+        label: "商品についての補足情報",
+        isRequired: true,
+        description: "サイト・店舗名、購入有無、感想などを記入してください",
+        maxlength: 100,
+        value: "入力済の内容が入ります。入力済の内容が入ります。入力済の内容が入ります。入力済の内容が入ります。"
+    },
+    render: useStateWrapper,
+}
+
+export const Error= {
+    args: {
+        label: "商品についての補足情報",
+        isRequired: true,
+        description: "サイト・店舗名、購入有無、感想などを記入してください",
+        maxlength: 30,
+        value: "入力済の内容が入ります。入力済の内容が入ります。入力済の内容が入ります。入力済の内容が入ります。"
+    },
+    render: useStateWrapper,
+}
+
+export const Disabled= {
+    args: {
+        label: "商品についての補足情報",
+        isRequired: true,
+        description: "サイト・店舗名、購入有無、感想などを記入してください",
+        maxlength: 30,
+        value: "入力済の内容が入ります。入力済の内容が入ります。入力済の内容が入ります。入力済の内容が入ります。",
+        disabled: true,
+    },
+    render: useStateWrapper,
+}
+
+
+export const DefaultWithoutCounter = {
+    args: {
+        label: "商品についての補足情報",
+        isRequired: true,
+        description: "サイト・店舗名、購入有無、感想などを記入してください",
         maxlength: 20,
+    },
+    render: useStateWrapper,
+}
+
+export const FocusedWithoutCounter = {
+    args: {
+        label: "商品についての補足情報",
+        isRequired: true,
+        description: "サイト・店舗名、購入有無、感想などを記入してください",
+        maxlength: 20,
+    },
+    render: useStateWrapper,
+    parameters: {
+        pseudo: {
+            focus: ".Focused textarea",
+        }
+    }
+}
+
+export const FilledWithoutCounter = {
+    args: {
+        label: "商品についての補足情報",
+        isRequired: true,
+        description: "サイト・店舗名、購入有無、感想などを記入してください",
+        maxlength: 20,
+        value: "入力済の内容が入ります。"
+    },
+    render: useStateWrapper,
+}
+
+export const ErrorWithoutCounter= {
+    args: {
+        label: "商品についての補足情報",
+        isRequired: true,
+        description: "サイト・店舗名、購入有無、感想などを記入してください",
+        maxlength: 20,
+        value: "入力済の内容が入ります。入力済の内容が入ります。"
     },
     render: useStateWrapper,
 }

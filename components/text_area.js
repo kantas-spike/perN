@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function TextArea({
   rows = 4,
-  cols = 24,
+  cols = 20,
   maxlength,
   value,
   onTextChanged,
@@ -67,7 +67,7 @@ export default function TextArea({
         )}`}
         style={styles}
         disabled={disabled}
-        value={value}
+        value={disabled ? '' : value}
         onChange={onTextChanged}
       ></textarea>
       <div className="flex justify-between" style={{width: styles['width']}}>
@@ -78,7 +78,7 @@ export default function TextArea({
           </div>
         ) : ( <div></div> )}
         {canShowCounter && !disabled ? (
-          <div className={`txt-label-m w-40 mt-1 text-right ${hasError ? 'text-error' : 'text-on-surface-variant'}`}>{value.length} / {maxlength}</div>
+          <div className={`txt-label-m w-36 mt-1 text-right ${hasError ? 'text-error' : 'text-on-surface-variant'}`}>{value.length} / {maxlength}</div>
         ) : null}
       </div>
     </div>

@@ -35,5 +35,34 @@ import * as TextAreaStories from './34_TextArea.stories'
 <Canvas of={TextAreaStories.Default} sourceState="shown" />
 
 <Controls of={TextAreaStories.Default} />
+
+### 状態別のテキストエリア
+
+<div className="p-4 grid grid-cols-5 gap-5 bg-surface border border-outline rounded-md justify-center items-start text-on-surface">
+<div className=""></div>
+<div className="col-span-2">カウンターあり</div>
+<div className="col-span-2">カウンターなし<div className="txt-body-m">(最大文字数が20文字未満)</div></div>
+<hr className="border border-outline-variant col-span-full" />
+<div className="">Default</div>
+<div className="col-span-2"><Story of={TextAreaStories.Default} /></div>
+<div className="col-span-2"><Story of={TextAreaStories.DefaultWithoutCounter} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div className="">Focused</div>
+<div className="col-span-2"><Story of={TextAreaStories.Focused} /></div>
+<div className="col-span-2"><Story of={TextAreaStories.FocusedWithoutCounter} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div className="">Filled</div>
+<div className="col-span-2"><Story of={TextAreaStories.Filled} /></div>
+<div className="col-span-2"><Story of={TextAreaStories.FilledWithoutCounter} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div className="">Error</div>
+<div className="col-span-2"><Story of={TextAreaStories.Error} /></div>
+<div className="col-span-2"><Story of={TextAreaStories.ErrorWithoutCounter} /></div>
+<hr className="border border-outline-variant col-span-full" />
+<div className="">Disabled</div>
+<div className="col-span-2"><Story of={TextAreaStories.Disabled} /></div>
+<div className="col-span-2"><Story of={TextAreaStories.Disabled} /></div>
+</div>
+
 </div>
 </Unstyled>
