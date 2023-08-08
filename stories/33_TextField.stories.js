@@ -1,4 +1,5 @@
 import TextField from "../components/text_field";
+import { useState } from "react";
 
 export default {
     title: "コンポーネント/03. テキスト入力",
@@ -24,10 +25,6 @@ export default {
             control: 'text',
             description: '入力誤りがあった場合のエラーメッセージ'
         },
-        initialValue: {
-            control: 'text',
-            description: 'テキスト入力項目の初期入力値'
-        },
         disabled: {
             control: 'boolean',
             description: 'テキスト入力項目が無効化されているかの当否',
@@ -42,9 +39,24 @@ export default {
             table: {
                 type: 'text'
             }
-        }
+        },
+        value: {
+            control: 'text',
+            description: 'テキスト入力項目の入力値'
+        },
+        onTextChanged: {
+            action: 'changed',
+            description: '入力項目のテキストが変更された時のイベントハンドラー'
+        },
     }
 
+}
+
+const useStateWrapper = (args) => {
+    const [value, setValue] = useState(args['value'] || '')
+    return (
+        <TextField {...args} value={value} onTextChanged={(e) => setValue(e.target.value)} />
+    )
 }
 
 export const Default = {
@@ -54,8 +66,8 @@ export const Default = {
         description: "ログイン後に画面に表示されるユーザー名です。",
         fieldSize: 10,
         errorMessage: "",
-        initialValue: "",
-    }
+    },
+    render: useStateWrapper,
 }
 
 export const Focused = {
@@ -65,13 +77,13 @@ export const Focused = {
         description: "ログイン後に画面に表示されるユーザー名です。",
         fieldSize: 10,
         errorMessage: "",
-        initialValue: "",
     },
     parameters: {
         pseudo: {
           focus: ["div.Focused input"],
         }
-    }
+    },
+    render: useStateWrapper,
 }
 
 export const Filled = {
@@ -81,8 +93,9 @@ export const Filled = {
         description: "ログイン後に画面に表示されるユーザー名です。",
         fieldSize: 10,
         errorMessage: "",
-        initialValue: "テストユーザー",
-    }
+        value: "テストユーザー",
+    },
+    render: useStateWrapper,
 }
 
 export const Error = {
@@ -92,8 +105,9 @@ export const Error = {
         description: "ログイン後に画面に表示されるユーザー名です。",
         fieldSize: 10,
         errorMessage: "登録済みのユーザー名です。別のユーザー名を入力して下さい。",
-        initialValue: "バッドユーザー",
-    }
+        value: "バッドユーザー",
+    },
+    render: useStateWrapper,
 }
 
 export const Disabled = {
@@ -103,7 +117,8 @@ export const Disabled = {
         description: "ログイン後に画面に表示されるユーザー名です。",
         fieldSize: 10,
         errorMessage: "",
-        initialValue: "テストユーザー",
+        value: "テストユーザー",
         disabled: true,
-    }
+    },
+    render: useStateWrapper,
 }
