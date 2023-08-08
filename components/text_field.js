@@ -4,14 +4,14 @@ export default function TextField({
   label,
   isRequired,
   description,
-  initialValue,
+  value,
+  onTextChanged,
   errorMessage,
   fieldSize,
   fieldType = "text",
   className,
   disabled = false,
 }) {
-  const [value, setValue] = useState(initialValue);
 
   const styles = {};
   const px_size = 2;
@@ -53,8 +53,8 @@ export default function TextField({
         type={fieldType}
         maxLength={fieldSize}
         style={ styles }
-        value={!disabled ? value : null}
-        onChange={(e) => setValue(e.target.value)}
+        value={!disabled ? value : ''}
+        onChange={onTextChanged}
         disabled={disabled}
       />
       {errorMessage && !disabled ? (
