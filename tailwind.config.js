@@ -119,6 +119,9 @@ module.exports = {
         'm': '0.04rem'
       },
       spacing: {
+        '3xs': '2px',
+        '2xs': '4px',
+        'xs': '8px',
         's': '16px',
         'm': '24px',
         'l': '40px',
