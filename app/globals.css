@@ -40,7 +40,7 @@ body {
   .hl-xs {
     @apply text-xl font-normal leading-m tracking-m;
   }
-  .hl-xxs {
+  .hl-2xs {
     @apply text-lg font-normal leading-m tracking-m;
   }
 
@@ -57,7 +57,7 @@ body {
   .hl-xs-mob {
     @apply text-lg font-medium leading-m tracking-m;
   }
-  .hl-xxs-mob {
+  .hl-2xs-mob {
     @apply text-base font-medium leading-l tracking-m;
   }
 
@@ -109,7 +109,7 @@ body {
   }
 
   h5 {
-    @apply hl-xxs-mob mt-m mb-s;
+    @apply hl-2xs-mob mt-m mb-s;
   }
 
   p {
@@ -151,7 +151,7 @@ body {
     }
 
     h5 {
-      @apply hl-xxs mt-m mb-s;
+      @apply hl-2xs mt-m mb-s;
     }
   }
 
