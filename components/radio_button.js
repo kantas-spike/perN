@@ -36,7 +36,7 @@ export default function RadioButton({
         name={name}
         checked={checkedValue === value}
         disabled={disabled}
-        className={`mx-s h-5 w-5 disabled:cursor-not-allowed appearance-none rounded-full border-4 border-surface accent-tones-P_50 outline outline-2 checked:bg-primary checked:outline-primary ${radio_classes.join(
+        className={`h-5 w-5 disabled:cursor-not-allowed appearance-none rounded-full border-4 border-surface accent-tones-P_50 outline outline-2 checked:bg-primary checked:outline-primary ${radio_classes.join(
           " ",
         )}`}
         onChange={onChanged}
@@ -79,10 +79,10 @@ export function RadioButtonLayout({
   if (type === "tile") {
     content = (
       <div
-        className={`flex-rows flex items-center rounded-md bg-surface py-s ${border_classes.join(' ')}`}
+        className={`flex-rows flex gap-s pl-s items-center rounded-md bg-surface py-s ${border_classes.join(' ')}`}
       >
         {children}
-        <div className="w-full ">
+        <div className="w-full">
           <label htmlFor={id} className={`py-3xs block ${label_classes.join(' ')}`}>
             {label}
             <div className={`txt-comment-l ${desc_classes.join(' ')}`}>
@@ -94,7 +94,7 @@ export function RadioButtonLayout({
     );
   } else {
     content = (
-      <div className={`flex-rows flex items-center py-xs`}>
+      <div className={`flex-rows flex gap-s items-center py-xs`}>
         {children}
         <label htmlFor={id} className={`py-3xs block w-full ${label_classes.join(' ')}`}>
           {label}
