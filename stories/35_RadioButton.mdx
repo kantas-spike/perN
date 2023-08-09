@@ -1,0 +1,145 @@
+import { Meta, Story, Unstyled, ArgTypes, Canvas, Controls } from '@storybook/blocks';
+import * as RadioButtonStories from './35_RadioButton.stories'
+import * as RadioButtonGroupStories from './35_RadioButtonGroup.stories'
+
+<Meta title="コンポーネント/04. ラジオボタン" />
+
+<Unstyled>
+<div className='font-sans text-on-surface'>
+# ラジオボタン
+
+ラジオボタンは、2〜5個の項目の中からひとつの選択肢を選ぶことを可能にします。
+
+## 仕様
+
+### ラジオボタン(グループ)
+
+#### デフォルト型
+
+<Canvas of={RadioButtonGroupStories.GroupNormal} sourceState="shown" />
+<Controls of={RadioButtonGroupStories.GroupNormal} />
+
+#### タイル型
+
+<Canvas of={RadioButtonGroupStories.GroupTile} sourceState="shown" />
+<Controls of={RadioButtonGroupStories.GroupTile} />
+
+
+### ラジオボタン(単体)
+
+#### デフォルト型
+
+<Canvas of={RadioButtonStories.RadioNormal} sourceState="shown" />
+
+<Controls of={RadioButtonStories.RadioNormal} />
+
+#### タイル型
+
+<Canvas of={RadioButtonStories.RadioTile} sourceState="shown" />
+
+<Controls of={RadioButtonStories.RadioTile} />
+
+## ガイドライン
+
+### 設計の原則
+
+- 複数選択肢が必要な場合、もしくは選択する項目がひとつしかない場合は、
+  必ずチェックボックスを仕様してください
+
+- ラジオボタンはテキストに左側に配置してください。
+  画面を拡大表示している利用者でも見つけやすくなります。
+
+- デフォルト型、タイル型の2種類のラジオボタンがあります。
+  補足説明が必要な場合にタイル型を活用できます。
+  ふたつの型を同時に使用することはできません。
+
+- ラベルテキストは入力項目を端的に表現してください。
+
+## 状態別ラジオボタン
+
+### ラジオボタン(グループ)
+
+#### デフォルト型
+
+<div className="p-4 border border-outline bg-surface text-on-surface grid grid-cols-5 gap-4">
+<div></div>
+<div className="col-span-2">必須</div>
+<div className="col-span-2">任意</div>
+<hr className="col-span-full border-outline-variant" />
+<div>説明文なし</div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.NormalWithRequiredAndNoDesc}/></div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.NormalWithNoRequiredAndNoDesc}/></div>
+<hr className="col-span-full border-outline-variant" />
+<div>説明文あり</div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.NormalWithRequiredAndDesc}/></div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.NormalWithNoRequiredAndDesc}/></div>
+<hr className="col-span-full border-outline-variant" />
+<div>選択済み</div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.NormalWithRequiredAndDescChecked}/></div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.NormalWithNoRequiredAndDescChecked}/></div>
+<hr className="col-span-full border-outline-variant" />
+<div>Error</div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.NormalErrorWithRequiredAndDesc}/></div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.NormalErrorWithNoRequiredAndDesc}/></div>
+<hr className="col-span-full border-outline-variant" />
+<div>Disabled</div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.NormalDisabledWithRequiredAndDesc}/></div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.NormalDisabledWithNoRequiredAndDesc}/></div>
+</div>
+
+#### タイル型
+
+<div className="p-4 border border-outline bg-surface text-on-surface grid grid-cols-5 gap-4">
+<div></div>
+<div className="col-span-2">必須</div>
+<div className="col-span-2">任意</div>
+<hr className="col-span-full border-outline-variant" />
+<div>説明文なし</div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.TileWithRequiredAndNoDesc}/></div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.TileWithNoRequiredAndNoDesc}/></div>
+<hr className="col-span-full border-outline-variant" />
+<div>説明文あり</div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.TileWithRequiredAndItem}/></div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.TileWithNoRequiredAndItem}/></div>
+<hr className="col-span-full border-outline-variant" />
+<div>選択済み</div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.TileWithRequiredAndItemChecked}/></div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.TileWithNoRequiredAndItemChecked}/></div>
+<hr className="col-span-full border-outline-variant" />
+<div>Error</div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.TileWithRequiredAndItemError}/></div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.TileWithNoRequiredAndItemError}/></div>
+<hr className="col-span-full border-outline-variant" />
+<div>Disabled</div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.TileWithRequiredAndItemDisabled}/></div>
+<div className="col-span-2"><Story of={RadioButtonGroupStories.TileWithNoRequiredAndItemDisabled}/></div>
+</div>
+
+### ラジオボタン(単体)
+
+#### デフォルト型
+
+<div className="p-4 border border-outline bg-surface text-on-surface grid grid-cols-5 gap-4 justify-center items-center">
+<div>状態</div>
+<div className="col-span-2">デフォルト型</div>
+<div className="col-span-2">タイル型</div>
+<hr className="col-span-full border-outline-variant" />
+<div>ノーマル</div>
+<div className="col-span-2"><Story of={RadioButtonStories.RadioNormlDefault} /></div>
+<div className="col-span-2"><Story of={RadioButtonStories.RadioTileDefault} /></div>
+<hr className="col-span-full border-outline-variant" />
+<div>Checked</div>
+<div className="col-span-2"><Story of={RadioButtonStories.RadioNormalChecked} /></div>
+<div className="col-span-2"><Story of={RadioButtonStories.RadioTileChecked} /></div>
+<hr className="col-span-full border-outline-variant" />
+<div>Error</div>
+<div className="col-span-2"><Story of={RadioButtonStories.RadioNormalError} /></div>
+<div className="col-span-2"><Story of={RadioButtonStories.RadioTileError} /></div>
+<hr className="col-span-full border-outline-variant" />
+<div>Disabled</div>
+<div className="col-span-2"><Story of={RadioButtonStories.RadioNormalDisabled} /></div>
+<div className="col-span-2"><Story of={RadioButtonStories.RadioTileDisabled} /></div>
+</div>
+
+</div>
+</Unstyled>
