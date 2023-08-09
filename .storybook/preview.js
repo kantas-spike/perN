@@ -27,7 +27,7 @@ const preview = {
   },
   decorators: [
     (Story, context) => (
-      <div className={`${context.name}`}>
+      <div className={`${context.name} text-on-surface`}>
         <Story />
       </div>
     )
