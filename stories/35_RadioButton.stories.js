@@ -2,7 +2,7 @@ import RadioButton from "../components/radio_button"
 import { useState } from "react"
 
 export default {
-    title: "コンポーネント/04. ラジオボタン/Radio Button",
+    title: "コンポーネント/05. ラジオボタン/Radio Button",
     component: RadioButton,
     argTypes: {
         label: {

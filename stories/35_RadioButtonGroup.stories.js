@@ -2,7 +2,7 @@ import RadioButtonGroup from "../components/radio_button_group"
 import { useState } from "react"
 
 export default {
-    title: 'コンポーネント/04. ラジオボタン/Radio Button Group',
+    title: 'コンポーネント/05. ラジオボタン/Radio Button Group',
     component: RadioButtonGroup,
     argTypes: {
         label: {
